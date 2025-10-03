@@ -94,10 +94,10 @@
         <nav class="container mx-auto px-6 py-4">
             <div class="flex justify-between items-center">
                 <div class="text-2xl font-bold text-orange-500">
-                    <a href="index">🥛 Yogurin Bustamante</a>
+                         <a href="/"><span role="img" aria-label="vaso de leche">🥛</span> Yogurin Bustamante</a>
                 </div>
                 <div class="hidden md:flex space-x-8">
-                    <a href="index" class="nav-link hover:text-orange-500">Inicio</a>
+                    <a href="/" class="nav-link hover:text-orange-500">Inicio</a>
                     <a href="tienda" class="nav-link hover:text-orange-500">Tienda</a>
                     <a href="servicios" class="nav-link hover:text-orange-500">Servicios</a>
                     <a href="nosotros" class="nav-link hover:text-orange-500">Nosotros</a>
@@ -454,8 +454,17 @@
         document.getElementById('contact-form').addEventListener('submit', (e) => {
             e.preventDefault();
             const formData = new FormData(e.target);
-            const mensaje = `Hola, mi nombre es ${formData.get('nombre')}. ${formData.get('mensaje')}`;
-            const whatsappURL = `https://wa.me/51944296912?text=${encodeURIComponent(mensaje)}`;
+            const nombre = formData.get('nombre');
+            const email = formData.get('email');
+            const telefono = formData.get('telefono');
+            const asunto = formData.get('asunto');
+            const mensaje = formData.get('mensaje');
+            const texto = `Hola, mi nombre es ${nombre}.
+    Email: ${email}
+    Teléfono: ${telefono}
+    Asunto: ${asunto}
+    Mensaje: ${mensaje}`;
+            const whatsappURL = `https://wa.me/51944296912?text=${encodeURIComponent(texto)}`;
             window.open(whatsappURL, '_blank');
             alert('¡Gracias por tu mensaje! Te redirigiremos a WhatsApp para completar tu consulta.');
         });

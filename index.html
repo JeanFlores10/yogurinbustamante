@@ -172,10 +172,10 @@
         <nav class="container mx-auto px-6 py-4">
             <div class="flex justify-between items-center">
                 <div class="text-2xl font-bold text-orange-500">
-                    <a href="index">🥛 Yogurin Bustamante</a>
+                    <a href="/"><span role="img" aria-label="vaso de leche">🥛</span> Yogurin Bustamante</a>
                 </div>
                 <div class="hidden md:flex space-x-8">
-                    <a href="index" class="nav-link hover:text-orange-500 text-orange-500">Inicio</a>
+                    <a href="/" class="nav-link hover:text-orange-500 text-orange-500">Inicio</a>
                     <a href="tienda" class="nav-link hover:text-orange-500">Tienda</a>
                     <a href="servicios" class="nav-link hover:text-orange-500">Servicios</a>
                     <a href="nosotros" class="nav-link hover:text-orange-500">Nosotros</a>
@@ -470,32 +470,52 @@
                 <div>
                     <form class="space-y-6" id="contact-form">
                         <div>
-                            <label class="block text-gray-700 font-semibold mb-2">Nombre completo</label>
-                            <input type="text"
-                                class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:border-orange-500"
-                                placeholder="Ingresa tu nombre completo" required>
+                            <label class="block text-gray-700 font-semibold mb-2">Nombre completo *</label>
+                            <input type="text" name="nombre"
+                                class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:border-orange-500 transition-colors"
+                                placeholder="Tu nombre" required>
                         </div>
+
                         <div>
-                            <label class="block text-gray-700 font-semibold mb-2">Email</label>
-                            <input type="email"
-                                class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:border-orange-500"
-                                placeholder="Ingresa tu correo" required>
+                            <label class="block text-gray-700 font-semibold mb-2">Email *</label>
+                            <input type="email" name="email"
+                                class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:border-orange-500 transition-colors"
+                                placeholder="tucorreo@ejemplo.com" required>
                         </div>
+
                         <div>
-                            <label class="block text-gray-700 font-semibold mb-2">Teléfono</label>
-                            <input type="tel"
-                                class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:border-orange-500"
-                                placeholder="Ingresa tu teléfono" required>
+                            <label class="block text-gray-700 font-semibold mb-2">Teléfono *</label>
+                            <input type="tel" name="telefono"
+                                class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:border-orange-500 transition-colors"
+                                placeholder="+51 999 999 999" required>
                         </div>
+
                         <div>
-                            <label class="block text-gray-700 font-semibold mb-2">Mensaje</label>
-                            <textarea rows="4"
-                                class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:border-orange-500"
-                                placeholder="Ingresa un mensaje" required></textarea>
+                            <label for="asunto" class="block text-gray-700 font-semibold mb-2">Asunto *</label>
+                            <select id="asunto" name="asunto"
+                                class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:border-orange-500 transition-colors"
+                                required>
+                                <option value="">Selecciona una opción</option>
+                                <option value="pedido">Realizar un pedido</option>
+                                <option value="mayoreo">Venta al por mayor</option>
+                                <option value="distribucion">Servicio de distribución</option>
+                                <option value="personalizado">Producto personalizado</option>
+                                <option value="suscripcion">Suscripción</option>
+                                <option value="otro">Otro</option>
+                            </select>
                         </div>
+
+                        <div>
+                            <label class="block text-gray-700 font-semibold mb-2">Mensaje *</label>
+                            <textarea rows="5" name="mensaje"
+                                class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:border-orange-500 transition-colors"
+                                placeholder="Escribe tu mensaje aquí..." required></textarea>
+                        </div>
+
                         <button type="submit"
-                            class="w-full bg-orange-500 text-white py-4 rounded-lg font-semibold hover:bg-orange-600 transition-colors transform hover:scale-105">Enviar
-                            Mensaje</button>
+                            class="w-full bg-orange-500 text-white py-4 rounded-lg font-semibold hover:bg-orange-600 transition-colors transform hover:scale-105">
+                            <i class="fas fa-paper-plane mr-2"></i>Enviar Mensaje
+                        </button>
                     </form>
                 </div>
                 <div class="space-y-8">
@@ -538,22 +558,22 @@
                     <div class="pt-6">
                         <h3 class="font-bold text-xl mb-4">Síguenos</h3>
                         <div class="flex space-x-4">
-                        <a href="#" title="Facebook"
-                            class="bg-blue-500 text-white w-10 h-10 rounded-full flex items-center justify-center hover:bg-blue-600 transition-colors">
-                            <i class="fab fa-facebook-f" aria-hidden="true"></i>
-                            <span class="sr-only">Facebook</span>
-                        </a>
-                        <a href="#" title="Instagram"
-                            class="bg-gradient-to-r from-purple-500 to-pink-500 text-white w-10 h-10 rounded-full flex items-center justify-center hover:opacity-80 transition-opacity">
-                            <i class="fab fa-instagram" aria-hidden="true"></i>
-                            <span class="sr-only">Instagram</span>
-                        </a>
-                        <a href="#" title="Twitter"
-                            class="bg-blue-400 text-white w-10 h-10 rounded-full flex items-center justify-center hover:bg-blue-500 transition-colors">
-                            <i class="fab fa-twitter" aria-hidden="true"></i>
-                            <span class="sr-only">Twitter</span>
-                        </a>
-                    </div>
+                            <a href="#" title="Facebook"
+                                class="bg-blue-500 text-white w-10 h-10 rounded-full flex items-center justify-center hover:bg-blue-600 transition-colors">
+                                <i class="fab fa-facebook-f" aria-hidden="true"></i>
+                                <span class="sr-only">Facebook</span>
+                            </a>
+                            <a href="#" title="Instagram"
+                                class="bg-gradient-to-r from-purple-500 to-pink-500 text-white w-10 h-10 rounded-full flex items-center justify-center hover:opacity-80 transition-opacity">
+                                <i class="fab fa-instagram" aria-hidden="true"></i>
+                                <span class="sr-only">Instagram</span>
+                            </a>
+                            <a href="#" title="Twitter"
+                                class="bg-blue-400 text-white w-10 h-10 rounded-full flex items-center justify-center hover:bg-blue-500 transition-colors">
+                                <i class="fab fa-twitter" aria-hidden="true"></i>
+                                <span class="sr-only">Twitter</span>
+                            </a>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -646,8 +666,20 @@
         });
         document.getElementById('contact-form').addEventListener('submit', (e) => {
             e.preventDefault();
-            alert('¡Gracias por tu mensaje! Te contactaremos pronto.');
-            e.target.reset();
+            const formData = new FormData(e.target);
+            const nombre = formData.get('nombre');
+            const email = formData.get('email');
+            const telefono = formData.get('telefono');
+            const asunto = formData.get('asunto');
+            const mensaje = formData.get('mensaje');
+            const texto = `Hola, mi nombre es ${nombre}.
+    Email: ${email}
+    Teléfono: ${telefono}
+    Asunto: ${asunto}
+    Mensaje: ${mensaje}`;
+            const whatsappURL = `https://wa.me/51944296912?text=${encodeURIComponent(texto)}`;
+            window.open(whatsappURL, '_blank');
+            alert('¡Gracias por tu mensaje! Te redirigiremos a WhatsApp para completar tu consulta.');
         });
         const observerOptions = { threshold: 0.1, rootMargin: '0px 0px -100px 0px' };
         const observer = new IntersectionObserver((entries) => {
