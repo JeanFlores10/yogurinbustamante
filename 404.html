@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,39 +9,69 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap');
-        * { font-family: 'Poppins', sans-serif; }
-        
-        .gradient-bg { background: linear-gradient(135deg, #87CEEB 0%, #FF8C00 100%); }
-        
+
+        * {
+            font-family: 'Poppins', sans-serif;
+        }
+
+        .gradient-bg {
+            background: linear-gradient(135deg, #87CEEB 0%, #FF8C00 100%);
+        }
+
         @keyframes float {
-            0%, 100% { transform: translateY(0px); }
-            50% { transform: translateY(-20px); }
+
+            0%,
+            100% {
+                transform: translateY(0px);
+            }
+
+            50% {
+                transform: translateY(-20px);
+            }
         }
-        
+
         @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(30px); }
-            to { opacity: 1; transform: translateY(0); }
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
         }
-        
+
         .float-animation {
             animation: float 3s ease-in-out infinite;
         }
-        
+
         .fade-in {
             animation: fadeIn 0.8s ease-out;
         }
-        
+
         .loading-dots::after {
             content: '...';
             animation: dots 1.5s steps(4, end) infinite;
         }
-        
+
         @keyframes dots {
-            0%, 20% { content: '.'; }
-            40% { content: '..'; }
-            60%, 100% { content: '...'; }
+
+            0%,
+            20% {
+                content: '.';
+            }
+
+            40% {
+                content: '..';
+            }
+
+            60%,
+            100% {
+                content: '...';
+            }
         }
-        
+
         .spinner {
             border: 3px solid rgba(255, 140, 0, 0.3);
             border-top: 3px solid #FF8C00;
@@ -49,200 +80,247 @@
             height: 40px;
             animation: spin 1s linear infinite;
         }
-        
+
         @keyframes spin {
-            0% { transform: rotate(0deg); }
-            100% { transform: rotate(360deg); }
+            0% {
+                transform: rotate(0deg);
+            }
+
+            100% {
+                transform: rotate(360deg);
+            }
         }
     </style>
 </head>
+
 <body class="bg-gray-50">
-    
+
     <!-- Contenedor principal -->
     <div class="min-h-screen flex items-center justify-center px-6 py-12">
         <div class="max-w-4xl w-full">
-            
+
             <!-- Contenido de error 404 (visible por defecto) -->
             <div id="error-content" class="text-center fade-in">
-                
+
                 <!-- Emoji de yogurt flotante -->
                 <div class="text-9xl mb-8 float-animation">
                     🥛
                 </div>
-                
+
                 <!-- Título principal -->
                 <h1 class="text-6xl md:text-8xl font-bold text-orange-500 mb-4">
                     404
                 </h1>
-                
+
                 <h2 class="text-3xl md:text-4xl font-bold text-gray-800 mb-6">
                     ¡Ups! Página no encontrada
                 </h2>
-                
+
                 <p class="text-xl text-gray-600 mb-8 max-w-2xl mx-auto">
-                    Parece que esta página se derramó como el yogurt. No te preocupes, te ayudaremos a encontrar lo que buscas.
+                    Parece que esta página se derramó como el yogurt. No te preocupes, te ayudaremos a encontrar lo que
+                    buscas.
                 </p>
-                
+
                 <!-- Botones de navegación -->
                 <div class="flex flex-col sm:flex-row gap-4 justify-center items-center mb-12">
-                    <a href="/index.html" class="bg-orange-500 text-white px-8 py-4 rounded-full font-semibold hover:bg-orange-600 transition-all transform hover:scale-105 shadow-lg inline-flex items-center">
+                    <a href="/index"
+                        class="bg-orange-500 text-white px-8 py-4 rounded-full font-semibold hover:bg-orange-600 transition-all transform hover:scale-105 shadow-lg inline-flex items-center">
                         <i class="fas fa-home mr-2"></i>
                         Volver al Inicio
                     </a>
-                    
-                    <a href="/tienda.html" class="bg-white border-2 border-orange-500 text-orange-500 px-8 py-4 rounded-full font-semibold hover:bg-orange-50 transition-all inline-flex items-center">
+
+                    <a href="/tienda"
+                        class="bg-white border-2 border-orange-500 text-orange-500 px-8 py-4 rounded-full font-semibold hover:bg-orange-50 transition-all inline-flex items-center">
                         <i class="fas fa-shopping-cart mr-2"></i>
                         Ver Productos
                     </a>
                 </div>
-                
+
                 <!-- Enlaces útiles -->
                 <div class="bg-white rounded-2xl shadow-xl p-8 max-w-2xl mx-auto">
                     <h3 class="text-2xl font-bold text-gray-800 mb-6">
                         ¿Qué estabas buscando?
                     </h3>
-                    
+
                     <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
-                        <a href="/tienda.html" class="flex flex-col items-center p-4 rounded-xl hover:bg-orange-50 transition-colors">
+                        <a href="/tienda"
+                            class="flex flex-col items-center p-4 rounded-xl hover:bg-orange-50 transition-colors">
                             <i class="fas fa-shopping-bag text-3xl text-orange-500 mb-2"></i>
                             <span class="text-sm font-semibold text-gray-700">Tienda</span>
                         </a>
-                        
-                        <a href="/servicios.html" class="flex flex-col items-center p-4 rounded-xl hover:bg-orange-50 transition-colors">
+
+                        <a href="/servicios"
+                            class="flex flex-col items-center p-4 rounded-xl hover:bg-orange-50 transition-colors">
                             <i class="fas fa-concierge-bell text-3xl text-orange-500 mb-2"></i>
                             <span class="text-sm font-semibold text-gray-700">Servicios</span>
                         </a>
-                        
-                        <a href="/nosotros.html" class="flex flex-col items-center p-4 rounded-xl hover:bg-orange-50 transition-colors">
+
+                        <a href="/nosotros"
+                            class="flex flex-col items-center p-4 rounded-xl hover:bg-orange-50 transition-colors">
                             <i class="fas fa-users text-3xl text-orange-500 mb-2"></i>
                             <span class="text-sm font-semibold text-gray-700">Nosotros</span>
                         </a>
-                        
-                        <a href="/contacto.html" class="flex flex-col items-center p-4 rounded-xl hover:bg-orange-50 transition-colors">
+
+                        <a href="/contacto"
+                            class="flex flex-col items-center p-4 rounded-xl hover:bg-orange-50 transition-colors">
                             <i class="fas fa-phone text-3xl text-orange-500 mb-2"></i>
                             <span class="text-sm font-semibold text-gray-700">Contacto</span>
                         </a>
                     </div>
                 </div>
-                
+
                 <!-- Contacto de emergencia -->
                 <div class="mt-12">
                     <p class="text-gray-600 mb-4">¿Necesitas ayuda inmediata?</p>
-                    <a href="https://wa.me/51944296912?text=Hola,%20necesito%20ayuda%20para%20encontrar%20una%20página" target="_blank" rel="noopener" class="inline-flex items-center text-green-600 font-semibold hover:text-green-700 text-lg">
+                    <a href="https://wa.me/51944296912?text=Hola,%20necesito%20ayuda%20para%20encontrar%20una%20página"
+                        target="_blank" rel="noopener"
+                        class="inline-flex items-center text-green-600 font-semibold hover:text-green-700 text-lg">
                         <i class="fab fa-whatsapp text-2xl mr-2"></i>
                         Chatea con nosotros por WhatsApp
                     </a>
                 </div>
-                
+
             </div>
-            
+
             <!-- Contenido de carga (oculto por defecto) -->
             <div id="loading-content" class="text-center fade-in" style="display: none;">
-                
+
                 <div class="text-7xl mb-8">
                     🥛
                 </div>
-                
+
                 <h2 class="text-3xl md:text-4xl font-bold text-gray-800 mb-6">
                     Redirigiendo<span class="loading-dots"></span>
                 </h2>
-                
+
                 <div class="flex justify-center mb-6">
                     <div class="spinner"></div>
                 </div>
-                
+
                 <p class="text-lg text-gray-600 mb-4">
                     Te estamos llevando a la página correcta
                 </p>
-                
+
                 <p class="text-sm text-gray-500">
                     Página solicitada: <span id="requested-page" class="font-mono text-orange-500"></span>
                 </p>
-                
+
             </div>
-            
+
         </div>
     </div>
 
     <!-- Script de redirección mejorado -->
-    <script type="text/javascript">
-        // Función para mostrar/ocultar contenido
-        function showLoading() {
-            document.getElementById('error-content').style.display = 'none';
-            document.getElementById('loading-content').style.display = 'block';
-        }
+<script type="text/javascript">
+    // --- LÓGICA DE CARGA Y ESTADOS (Mantenida) ---
+
+    // Función para mostrar/ocultar contenido de carga
+    function showLoading() {
+        document.getElementById('error-content').style.display = 'none';
+        document.getElementById('loading-content').style.display = 'block';
+    }
+
+    // Función para mostrar el error 404
+    function showError() {
+        document.getElementById('error-content').style.display = 'block';
+        document.getElementById('loading-content').style.display = 'none';
+    }
+
+    // Obtener la ruta solicitada
+    var path = window.location.pathname;
+    var pageName = path.substring(1).replace(/\/$/, ''); // Eliminar barra inicial y final
+
+    // Mostrar página solicitada en el spinner
+    document.getElementById('requested-page').textContent = path || '/';
+
+    // Lista de páginas válidas (solo la base, sin .html)
+    var validPages = ['index', 'tienda', 'servicios', 'nosotros', 'contacto'];
+
+    // --- NUEVA LÓGICA DE CARGA AJAX (Reemplaza la redirección) ---
+
+    function loadContent(file) {
+        showLoading(); // Muestra el spinner de carga
+
+        fetch(file)
+            .then(response => {
+                if (response.ok) return response.text();
+                // Si la URL .html existe pero falla por alguna razón
+                throw new Error('Error al cargar el archivo.'); 
+            })
+            .then(html => {
+                // Parsear el contenido HTML del archivo .html cargado
+                const parser = new DOMParser();
+                const doc = parser.parseFromString(html, 'text/html');
+
+                // Reemplazar el BODY y el TÍTULO con el contenido de la página real
+                // NOTA: Esto reemplaza TODO, incluyendo el header y footer.
+                document.body.innerHTML = doc.body.innerHTML;
+                document.title = doc.title;
+            })
+            .catch(() => {
+                // Si la carga AJAX falla, mostrar el 404
+                showError();
+            });
+    }
+
+    // --- FUNCIÓN PRINCIPAL DE ENRUTAMIENTO (Corregida) ---
+    function redirectToPage() {
+        var basePageName = pageName.split('/')[0];
         
-        function showError() {
-            document.getElementById('error-content').style.display = 'block';
-            document.getElementById('loading-content').style.display = 'none';
-        }
+        // Determinar el nombre de archivo .html que se debería cargar
+        var targetFileName = basePageName + '.html';
         
-        // Obtener la ruta solicitada
-        var path = window.location.pathname;
-        var pageName = path.substring(1).replace(/\/$/, ''); // Eliminar barra inicial y final
+        // 1. Manejar la raíz (dominio.com/)
+        if (pageName === "" || pageName === "index") {
+            loadContent("/index.html");
+            return;
+        } 
         
-        // Mostrar página solicitada
-        document.getElementById('requested-page').textContent = path || '/';
-        
-        // Lista de páginas válidas
-        var validPages = ['index', 'tienda', 'servicios', 'nosotros', 'contacto'];
-        
-        // Función de redirección
-        function redirectToPage() {
-            if (pageName === "" || pageName === "index") {
-                // Si la URL es la raíz o es "index", vamos al index.html
-                showLoading();
-                setTimeout(function() {
-                    window.location.replace("/index.html");
-                }, 500);
-            } else if (!pageName.endsWith('.html')) {
-                // Verificar si es una página válida
-                var basePageName = pageName.split('/')[0]; // Por si hay subcarpetas
-                
-                if (validPages.includes(basePageName)) {
-                    // Es una página válida, redirigir
-                    showLoading();
-                    var newLocation = '/' + pageName + '.html';
-                    setTimeout(function() {
-                        window.location.replace(newLocation);
-                    }, 500);
-                } else {
-                    // No es una página válida, mostrar error 404
-                    showError();
-                }
+        // 2. Manejar rutas limpias (dominio.com/nosotros)
+        if (!pageName.endsWith('.html')) {
+            if (validPages.includes(basePageName)) {
+                // Es una página válida, cargar el contenido por AJAX
+                loadContent('/' + targetFileName);
+                return;
             } else {
-                // Ya termina en .html, verificar si existe
-                var basePageName = pageName.replace('.html', '').split('/')[0];
-                
-                if (!validPages.includes(basePageName)) {
-                    // No es una página válida, mostrar error 404
-                    showError();
-                } else {
-                    // Página válida con .html, redirigir
-                    showLoading();
-                    setTimeout(function() {
-                        window.location.replace('/' + pageName);
-                    }, 500);
-                }
+                // No es una página conocida, es un 404 verdadero
+                showError();
+                return;
+            }
+        } 
+        
+        // 3. Manejar rutas con .html (dominio.com/nosotros.html)
+        // Aunque no es la ruta ideal, permitimos que cargue si existe
+        if (pageName.endsWith('.html')) {
+            if (validPages.includes(basePageName.replace('.html', ''))) {
+                 // Si la ruta con .html es válida, la cargamos directamente.
+                 loadContent('/' + pageName);
+                 return;
             }
         }
-        
-        // Ejecutar redirección automáticamente
-        redirectToPage();
-        
-        // Log para debugging (opcional, puedes removerlo en producción)
-        console.log('Página solicitada:', path);
-        console.log('Nombre de página:', pageName);
-    </script>
+
+        // Si ninguna condición se cumple, mostrar error
+        showError();
+    }
+
+    // Ejecutar enrutamiento automáticamente
+    redirectToPage();
+
+    // Log para debugging (opcional, puedes removerlo en producción)
+    console.log('Página solicitada:', path);
+    console.log('Nombre de página:', pageName);
+</script>
 
     <!-- Footer mínimo -->
     <footer class="fixed bottom-0 w-full bg-white border-t border-gray-200 py-4">
         <div class="container mx-auto px-6 text-center">
             <p class="text-sm text-gray-500">
-                © 2025 Yogurin Bustamante - <a href="/index.html" class="text-orange-500 hover:text-orange-600">Inicio</a>
+                © 2025 Yogurin Bustamante - <a href="/index"
+                    class="text-orange-500 hover:text-orange-600">Inicio</a>
             </p>
         </div>
     </footer>
 
 </body>
+
 </html>
