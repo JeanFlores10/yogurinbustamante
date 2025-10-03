@@ -1,34 +1,22 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Tienda Online Yogurin Bustamante - Compra yogurt artesanal natural de la más alta calidad">
+    <meta name="description"
+        content="Tienda Online Yogurin Bustamante - Compra yogurt artesanal natural de la más alta calidad">
     <meta name="keywords" content="tienda yogurt, comprar yogurt, yogurt online, yogurt artesanal">
     <title>Tienda Online | Yogurin Bustamante</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <style>
-        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap');
-        * { font-family: 'Poppins', sans-serif; }
-        .gradient-bg { background: linear-gradient(135deg, #87CEEB 0%, #FF8C00 100%); }
-        .hover-lift { transition: transform 0.3s ease, box-shadow 0.3s ease; }
-        .hover-lift:hover { transform: translateY(-10px); box-shadow: 0 20px 40px rgba(255, 140, 0, 0.3); }
-        .whatsapp-float { position: fixed; bottom: 30px; right: 30px; background: #25D366; color: white; width: 60px; height: 60px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 30px; box-shadow: 0 4px 20px rgba(37, 211, 102, 0.5); z-index: 1000; animation: pulse 2s infinite; }
-        @keyframes pulse { 0%, 100% { transform: scale(1); } 50% { transform: scale(1.1); } }
-        .product-card { transition: all 0.3s ease; position: relative; overflow: hidden; }
-        .product-card::before { content: ''; position: absolute; top: 0; left: -100%; width: 100%; height: 100%; background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent); transition: left 0.5s; }
-        .product-card:hover::before { left: 100%; }
-        .nav-link { position: relative; transition: color 0.3s; }
-        .nav-link::after { content: ''; position: absolute; bottom: -5px; left: 0; width: 0; height: 2px; background: #FF8C00; transition: width 0.3s; }
-        .nav-link:hover::after { width: 100%; }
-        .filter-btn { transition: all 0.3s; }
-        .filter-btn.active { background: #FF8C00; color: white; }
-    </style>
+<link rel="stylesheet" href="css/styles.css">
 </head>
+
 <body class="bg-gray-50">
-    
-    <a href="https://wa.me/51944296912?text=Hola,%20me%20interesa%20conocer%20más%20sobre%20sus%20productos" target="_blank" rel="noopener" class="whatsapp-float" title="Contáctanos por WhatsApp">
+
+    <a href="https://wa.me/51944296912?text=Hola,%20me%20interesa%20conocer%20más%20sobre%20sus%20productos"
+        target="_blank" rel="noopener" class="whatsapp-float" title="Contáctanos por WhatsApp">
         <i class="fab fa-whatsapp" aria-hidden="true"></i>
         <span class="sr-only">Contáctanos por WhatsApp</span>
     </a>
@@ -71,16 +59,23 @@
     <section class="py-8 bg-white sticky top-20 z-40 shadow-md">
         <div class="container mx-auto px-6">
             <div class="flex flex-wrap gap-4 justify-center items-center">
-                <button class="filter-btn active px-6 py-2 rounded-full border-2 border-orange-500 font-semibold" data-filter="todos">
+                <button class="filter-btn active px-6 py-2 rounded-full border-2 border-orange-500 font-semibold"
+                    data-filter="todos">
                     Todos los Productos
                 </button>
-                <button class="filter-btn px-6 py-2 rounded-full border-2 border-orange-500 font-semibold text-orange-500" data-filter="natural">
+                <button
+                    class="filter-btn px-6 py-2 rounded-full border-2 border-orange-500 font-semibold text-orange-500"
+                    data-filter="natural">
                     Naturales
                 </button>
-                <button class="filter-btn px-6 py-2 rounded-full border-2 border-orange-500 font-semibold text-orange-500" data-filter="frutas">
+                <button
+                    class="filter-btn px-6 py-2 rounded-full border-2 border-orange-500 font-semibold text-orange-500"
+                    data-filter="frutas">
                     Con Frutas
                 </button>
-                <button class="filter-btn px-6 py-2 rounded-full border-2 border-orange-500 font-semibold text-orange-500" data-filter="mejor">
+                <button
+                    class="filter-btn px-6 py-2 rounded-full border-2 border-orange-500 font-semibold text-orange-500"
+                    data-filter="mejor">
                     Más Vendidos
                 </button>
             </div>
@@ -90,12 +85,14 @@
     <section class="py-20 bg-gray-50">
         <div class="container mx-auto px-6">
             <div class="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-8" id="productos-grid">
-                
-                <div class="product-card hover-lift bg-white rounded-2xl shadow-lg overflow-hidden" data-category="natural mejor">
-                    <img src="./img/yogurt-natural.png" alt="Yogurt Natural" class="w-full h-64 object-cover">
+
+                <div class="product-card hover-lift bg-white rounded-2xl shadow-lg overflow-hidden"
+                    data-category="natural mejor">
+                    <img src="./img/yogurt-natural.webp" alt="Yogurt Natural" class="w-full h-64 object-cover">
                     <div class="p-6">
                         <span class="bg-green-100 text-green-800 text-xs px-3 py-1 rounded-full">Más vendido</span>
-                        <span class="bg-red-100 text-red-800 text-xs px-3 py-1 rounded-full mt-2 inline-block">Popular en Sayán</span>
+                        <span class="bg-red-100 text-red-800 text-xs px-3 py-1 rounded-full mt-2 inline-block">Popular
+                            en Sayán</span>
                         <h3 class="text-2xl font-bold mt-3 mb-2">Yogurt Natural</h3>
                         <p class="text-gray-600 mb-4">Clásico y cremoso, perfecto para cualquier momento.</p>
                         <div class="mb-4">
@@ -104,18 +101,21 @@
                         </div>
                         <div class="flex justify-between items-center">
                             <span class="text-3xl font-bold text-orange-500">S/. 10.00</span>
-                            <a href="https://wa.me/51944296912?text=Hola,%20quiero%20cotizar%20el%20Yogurt%20Natural" class="bg-orange-500 text-white px-6 py-2 rounded-full hover:bg-orange-600 transition-colors">
+                            <a href="https://wa.me/51944296912?text=Hola,%20quiero%20cotizar%20el%20Yogurt%20Natural"
+                                class="bg-orange-500 text-white px-6 py-2 rounded-full hover:bg-orange-600 transition-colors">
                                 Cotizar
                             </a>
                         </div>
                     </div>
                 </div>
 
-                <div class="product-card hover-lift bg-white rounded-2xl shadow-lg overflow-hidden" data-category="frutas mejor">
-                    <img src="./img/yogurt-fresa.png" alt="Yogurt Fresa" class="w-full h-64 object-cover">
+                <div class="product-card hover-lift bg-white rounded-2xl shadow-lg overflow-hidden"
+                    data-category="frutas mejor">
+                    <img src="./img/yogurt-fresa.webp" alt="Yogurt Fresa" class="w-full h-64 object-cover">
                     <div class="p-6">
                         <span class="bg-green-100 text-green-800 text-xs px-3 py-1 rounded-full">Más vendido</span>
-                        <span class="bg-red-100 text-red-800 text-xs px-3 py-1 rounded-full mt-2 inline-block">Popular en Sayán</span>
+                        <span class="bg-red-100 text-red-800 text-xs px-3 py-1 rounded-full mt-2 inline-block">Popular
+                            en Sayán</span>
                         <h3 class="text-2xl font-bold mt-3 mb-2">Yogurt con Fresa</h3>
                         <p class="text-gray-600 mb-4">Delicioso sabor a fresas frescas naturales.</p>
                         <div class="mb-4">
@@ -124,18 +124,21 @@
                         </div>
                         <div class="flex justify-between items-center">
                             <span class="text-3xl font-bold text-orange-500">S/. 12.00</span>
-                            <a href="https://wa.me/51944296912?text=Hola,%20quiero%20cotizar%20el%20Yogurt%20con%20Fresa" class="bg-orange-500 text-white px-6 py-2 rounded-full hover:bg-orange-600 transition-colors">
+                            <a href="https://wa.me/51944296912?text=Hola,%20quiero%20cotizar%20el%20Yogurt%20con%20Fresa"
+                                class="bg-orange-500 text-white px-6 py-2 rounded-full hover:bg-orange-600 transition-colors">
                                 Cotizar
                             </a>
                         </div>
                     </div>
                 </div>
 
-                <div class="product-card hover-lift bg-white rounded-2xl shadow-lg overflow-hidden" data-category="frutas mejor">
-                    <img src="./img/yogurt-arandano.png" alt="Yogurt Arándanos" class="w-full h-64 object-cover">
+                <div class="product-card hover-lift bg-white rounded-2xl shadow-lg overflow-hidden"
+                    data-category="frutas mejor">
+                    <img src="./img/yogurt-arandano.webp" alt="Yogurt Arándanos" class="w-full h-64 object-cover">
                     <div class="p-6">
                         <span class="bg-green-100 text-green-800 text-xs px-3 py-1 rounded-full">Más vendido</span>
-                        <span class="bg-red-100 text-red-800 text-xs px-3 py-1 rounded-full mt-2 inline-block">Popular en Sayán</span>
+                        <span class="bg-red-100 text-red-800 text-xs px-3 py-1 rounded-full mt-2 inline-block">Popular
+                            en Sayán</span>
                         <h3 class="text-2xl font-bold mt-3 mb-2">Yogurt con Arándanos</h3>
                         <p class="text-gray-600 mb-4">Antioxidantes naturales y sabor excepcional.</p>
                         <div class="mb-4">
@@ -144,18 +147,21 @@
                         </div>
                         <div class="flex justify-between items-center">
                             <span class="text-3xl font-bold text-orange-500">S/. 12.00</span>
-                            <a href="https://wa.me/51944296912?text=Hola,%20quiero%20cotizar%20el%20Yogurt%20con%20Arándanos" class="bg-orange-500 text-white px-6 py-2 rounded-full hover:bg-orange-600 transition-colors">
+                            <a href="https://wa.me/51944296912?text=Hola,%20quiero%20cotizar%20el%20Yogurt%20con%20Arándanos"
+                                class="bg-orange-500 text-white px-6 py-2 rounded-full hover:bg-orange-600 transition-colors">
                                 Cotizar
                             </a>
                         </div>
                     </div>
                 </div>
 
-                <div class="product-card hover-lift bg-white rounded-2xl shadow-lg overflow-hidden" data-category="frutas mejor">
-                    <img src="./img/yogurt-guanabana.png" alt="Yogurt Guanábana" class="w-full h-64 object-cover">
+                <div class="product-card hover-lift bg-white rounded-2xl shadow-lg overflow-hidden"
+                    data-category="frutas mejor">
+                    <img src="./img/yogurt-guanabana.webp" alt="Yogurt Guanábana" class="w-full h-64 object-cover">
                     <div class="p-6">
                         <span class="bg-green-100 text-green-800 text-xs px-3 py-1 rounded-full">Más vendido</span>
-                        <span class="bg-red-100 text-red-800 text-xs px-3 py-1 rounded-full mt-2 inline-block">Popular en Sayán</span>
+                        <span class="bg-red-100 text-red-800 text-xs px-3 py-1 rounded-full mt-2 inline-block">Popular
+                            en Sayán</span>
                         <h3 class="text-2xl font-bold mt-3 mb-2">Yogurt con Guanábana</h3>
                         <p class="text-gray-600 mb-4">Exótico sabor tropical peruano.</p>
                         <div class="mb-4">
@@ -164,18 +170,21 @@
                         </div>
                         <div class="flex justify-between items-center">
                             <span class="text-3xl font-bold text-orange-500">S/. 12.00</span>
-                            <a href="https://wa.me/51944296912?text=Hola,%20quiero%20cotizar%20el%20Yogurt%20con%20Guanábana" class="bg-orange-500 text-white px-6 py-2 rounded-full hover:bg-orange-600 transition-colors">
+                            <a href="https://wa.me/51944296912?text=Hola,%20quiero%20cotizar%20el%20Yogurt%20con%20Guanábana"
+                                class="bg-orange-500 text-white px-6 py-2 rounded-full hover:bg-orange-600 transition-colors">
                                 Cotizar
                             </a>
                         </div>
                     </div>
                 </div>
 
-                <div class="product-card hover-lift bg-white rounded-2xl shadow-lg overflow-hidden" data-category="frutas mejor">
-                    <img src="./img/yogurt-platano.png" alt="Yogurt Plátano" class="w-full h-64 object-cover">
+                <div class="product-card hover-lift bg-white rounded-2xl shadow-lg overflow-hidden"
+                    data-category="frutas mejor">
+                    <img src="./img/yogurt-platano.webp" alt="Yogurt Plátano" class="w-full h-64 object-cover">
                     <div class="p-6">
                         <span class="bg-green-100 text-green-800 text-xs px-3 py-1 rounded-full">Más vendido</span>
-                        <span class="bg-red-100 text-red-800 text-xs px-3 py-1 rounded-full mt-2 inline-block">Popular en Sayán</span>
+                        <span class="bg-red-100 text-red-800 text-xs px-3 py-1 rounded-full mt-2 inline-block">Popular
+                            en Sayán</span>
                         <h3 class="text-2xl font-bold mt-3 mb-2">Yogurt con Plátano</h3>
                         <p class="text-gray-600 mb-4">Energía natural y delicioso sabor.</p>
                         <div class="mb-4">
@@ -184,18 +193,21 @@
                         </div>
                         <div class="flex justify-between items-center">
                             <span class="text-3xl font-bold text-orange-500">S/. 12.00</span>
-                            <a href="https://wa.me/51944296912?text=Hola,%20quiero%20cotizar%20el%20Yogurt%20con%20Plátano" class="bg-orange-500 text-white px-6 py-2 rounded-full hover:bg-orange-600 transition-colors">
+                            <a href="https://wa.me/51944296912?text=Hola,%20quiero%20cotizar%20el%20Yogurt%20con%20Plátano"
+                                class="bg-orange-500 text-white px-6 py-2 rounded-full hover:bg-orange-600 transition-colors">
                                 Cotizar
                             </a>
                         </div>
                     </div>
                 </div>
 
-                <div class="product-card hover-lift bg-white rounded-2xl shadow-lg overflow-hidden" data-category="frutas mejor">
-                    <img src="./img/yogurt-pina.png" alt="Yogurt Piña" class="w-full h-64 object-cover">
+                <div class="product-card hover-lift bg-white rounded-2xl shadow-lg overflow-hidden"
+                    data-category="frutas mejor">
+                    <img src="./img/yogurt-pina.webp" alt="Yogurt Piña" class="w-full h-64 object-cover">
                     <div class="p-6">
                         <span class="bg-green-100 text-green-800 text-xs px-3 py-1 rounded-full">Más vendido</span>
-                        <span class="bg-red-100 text-red-800 text-xs px-3 py-1 rounded-full mt-2 inline-block">Popular en Sayán</span>
+                        <span class="bg-red-100 text-red-800 text-xs px-3 py-1 rounded-full mt-2 inline-block">Popular
+                            en Sayán</span>
                         <h3 class="text-2xl font-bold mt-3 mb-2">Yogurt con Piña</h3>
                         <p class="text-gray-600 mb-4">Refrescante y tropical.</p>
                         <div class="mb-4">
@@ -204,18 +216,21 @@
                         </div>
                         <div class="flex justify-between items-center">
                             <span class="text-3xl font-bold text-orange-500">S/. 12.00</span>
-                            <a href="https://wa.me/51944296912?text=Hola,%20quiero%20cotizar%20el%20Yogurt%20con%20Piña" class="bg-orange-500 text-white px-6 py-2 rounded-full hover:bg-orange-600 transition-colors">
+                            <a href="https://wa.me/51944296912?text=Hola,%20quiero%20cotizar%20el%20Yogurt%20con%20Piña"
+                                class="bg-orange-500 text-white px-6 py-2 rounded-full hover:bg-orange-600 transition-colors">
                                 Cotizar
                             </a>
                         </div>
                     </div>
                 </div>
 
-                <div class="product-card hover-lift bg-white rounded-2xl shadow-lg overflow-hidden" data-category="frutas mejor">
-                    <img src="./img/yogurt-pitahaya.png" alt="Yogurt Pitahaya" class="w-full h-64 object-cover">
+                <div class="product-card hover-lift bg-white rounded-2xl shadow-lg overflow-hidden"
+                    data-category="frutas mejor">
+                    <img src="./img/yogurt-pitahaya.webp" alt="Yogurt Pitahaya" class="w-full h-64 object-cover">
                     <div class="p-6">
                         <span class="bg-green-100 text-green-800 text-xs px-3 py-1 rounded-full">Más vendido</span>
-                        <span class="bg-red-100 text-red-800 text-xs px-3 py-1 rounded-full mt-2 inline-block">Popular en Sayán</span>
+                        <span class="bg-red-100 text-red-800 text-xs px-3 py-1 rounded-full mt-2 inline-block">Popular
+                            en Sayán</span>
                         <h3 class="text-2xl font-bold mt-3 mb-2">Yogurt con Pitahaya</h3>
                         <p class="text-gray-600 mb-4">Sabor exótico y nutritivo.</p>
                         <div class="mb-4">
@@ -224,7 +239,8 @@
                         </div>
                         <div class="flex justify-between items-center">
                             <span class="text-3xl font-bold text-orange-500">S/. 12.00</span>
-                            <a href="https://wa.me/51944296912?text=Hola,%20quiero%20cotizar%20el%20Yogurt%20con%20Pitahaya" class="bg-orange-500 text-white px-6 py-2 rounded-full hover:bg-orange-600 transition-colors">
+                            <a href="https://wa.me/51944296912?text=Hola,%20quiero%20cotizar%20el%20Yogurt%20con%20Pitahaya"
+                                class="bg-orange-500 text-white px-6 py-2 rounded-full hover:bg-orange-600 transition-colors">
                                 Cotizar
                             </a>
                         </div>
@@ -240,7 +256,8 @@
             <div class="bg-gradient-to-r from-orange-500 to-orange-600 rounded-3xl p-12 text-center text-white">
                 <h2 class="text-4xl font-bold mb-4">¿Necesitas pedidos al por mayor?</h2>
                 <p class="text-xl mb-8 opacity-90">Contáctanos y obtén precios especiales para tu negocio</p>
-                <a href="https://wa.me/51944296912?text=Hola,%20necesito%20información%20sobre%20pedidos%20al%20por%20mayor" class="inline-block bg-white text-orange-500 px-10 py-4 rounded-full font-bold text-lg hover:bg-gray-100 transition-all transform hover:scale-105">
+                <a href="https://wa.me/51944296912?text=Hola,%20necesito%20información%20sobre%20pedidos%20al%20por%20mayor"
+                    class="inline-block bg-white text-orange-500 px-10 py-4 rounded-full font-bold text-lg hover:bg-gray-100 transition-all transform hover:scale-105">
                     <i class="fab fa-whatsapp mr-2"></i>Solicitar Cotización
                 </a>
             </div>
@@ -258,10 +275,14 @@
                     <h4 class="font-bold text-lg mb-4">Enlaces Rápidos</h4>
                     <ul class="space-y-2">
                         <li><a href="/" class="text-gray-400 hover:text-orange-500 transition-colors">Inicio</a></li>
-                        <li><a href="tienda" class="text-gray-400 hover:text-orange-500 transition-colors">Tienda</a></li>
-                        <li><a href="servicios" class="text-gray-400 hover:text-orange-500 transition-colors">Servicios</a></li>
-                        <li><a href="nosotros" class="text-gray-400 hover:text-orange-500 transition-colors">Nosotros</a></li>
-                        <li><a href="contacto" class="text-gray-400 hover:text-orange-500 transition-colors">Contacto</a></li>
+                        <li><a href="tienda" class="text-gray-400 hover:text-orange-500 transition-colors">Tienda</a>
+                        </li>
+                        <li><a href="servicios"
+                                class="text-gray-400 hover:text-orange-500 transition-colors">Servicios</a></li>
+                        <li><a href="nosotros"
+                                class="text-gray-400 hover:text-orange-500 transition-colors">Nosotros</a></li>
+                        <li><a href="contacto"
+                                class="text-gray-400 hover:text-orange-500 transition-colors">Contacto</a></li>
                     </ul>
                 </div>
                 <div>
@@ -275,15 +296,18 @@
                 <div>
                     <h4 class="font-bold text-lg mb-4">Síguenos</h4>
                     <div class="flex space-x-4">
-                        <a href="#" title="Facebook" class="bg-blue-500 text-white w-10 h-10 rounded-full flex items-center justify-center hover:bg-blue-600 transition-colors">
+                        <a href="#" title="Facebook"
+                            class="bg-blue-500 text-white w-10 h-10 rounded-full flex items-center justify-center hover:bg-blue-600 transition-colors">
                             <i class="fab fa-facebook-f" aria-hidden="true"></i>
                             <span class="sr-only">Facebook</span>
                         </a>
-                        <a href="#" title="Instagram" class="bg-gradient-to-r from-purple-500 to-pink-500 text-white w-10 h-10 rounded-full flex items-center justify-center hover:opacity-80 transition-opacity">
+                        <a href="#" title="Instagram"
+                            class="bg-gradient-to-r from-purple-500 to-pink-500 text-white w-10 h-10 rounded-full flex items-center justify-center hover:opacity-80 transition-opacity">
                             <i class="fab fa-instagram" aria-hidden="true"></i>
                             <span class="sr-only">Instagram</span>
                         </a>
-                        <a href="#" title="Twitter" class="bg-blue-400 text-white w-10 h-10 rounded-full flex items-center justify-center hover:bg-blue-500 transition-colors">
+                        <a href="#" title="Twitter"
+                            class="bg-blue-400 text-white w-10 h-10 rounded-full flex items-center justify-center hover:bg-blue-500 transition-colors">
                             <i class="fab fa-twitter" aria-hidden="true"></i>
                             <span class="sr-only">Twitter</span>
                         </a>
@@ -333,4 +357,5 @@
         });
     </script>
 </body>
+
 </html>
