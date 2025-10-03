@@ -1,0 +1,589 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menú Yogurin Bustamante</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Poppins:wght@400;500;600;700&family=Source+Sans+Pro:wght@300;400&display=swap">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Source Sans Pro', sans-serif;
+            background-color: #f8f8f8;
+            color: #333;
+            display: flex;
+            justify-content: center;
+            padding: 20px;
+        }
+
+        .menu-container {
+            width: 100%;
+            max-width: 800px;
+            background: white;
+            box-shadow: 0 5px 25px rgba(0,0,0,0.1);
+            position: relative;
+        }
+
+        /* PORTADA */
+        .cover {
+            min-height: 100vh;
+            padding: 40px;
+            background: white;
+            display: flex;
+            flex-direction: column;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .cover::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 12px;
+            background: #FF6A00;
+        }
+
+        .cover::after {
+            content: "";
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 12px;
+            background: #FF6A00;
+        }
+
+        .logo-container {
+            text-align: center;
+            padding: 20px 0;
+            position: relative;
+            z-index: 2;
+        }
+
+        .logo {
+            font-family: 'Poppins', sans-serif;
+            font-size: 3.8rem;
+            font-weight: 700;
+            color: #222;
+            text-transform: uppercase;
+            letter-spacing: 4px;
+            position: relative;
+            display: inline-block;
+        }
+
+        .logo::after {
+            content: "";
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 4px;
+            background: #FF6A00;
+        }
+
+        .product-showcase {
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 40px 0;
+            position: relative;
+            z-index: 1;
+        }
+
+        .mockup-container {
+            width: 80%;
+            max-width: 500px;
+            height: 300px;
+            background: linear-gradient(135deg, #fff8f2, #fff0e6);
+            border-radius: 12px;
+            overflow: hidden;
+            position: relative;
+            box-shadow: 0 15px 35px rgba(255, 106, 0, 0.15);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 30px 0;
+        }
+
+        .mockup-image {
+            width: 100%;
+            height: 100%;
+            background: url('https://images.unsplash.com/photo-1560008581-09826d1de69e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=744&q=80') center/cover;
+            border-radius: 8px;
+        }
+
+        .tagline {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 2.2rem;
+            font-weight: 300;
+            color: #444;
+            text-align: center;
+            margin: 30px 0;
+            letter-spacing: 1px;
+            line-height: 1.4;
+            max-width: 600px;
+        }
+
+        .contact-info {
+            text-align: center;
+            padding: 20px 0;
+            font-size: 1rem;
+            color: #777;
+            position: relative;
+            z-index: 2;
+        }
+
+        .contact-info i {
+            color: #FF6A00;
+            margin: 0 5px;
+        }
+
+        /* PÁGINAS INTERNAS */
+        .page {
+            min-height: 100vh;
+            padding: 50px 40px;
+            position: relative;
+            background: white;
+        }
+
+        .page-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 40px;
+        }
+
+        .page-logo {
+            font-family: 'Poppins', sans-serif;
+            font-size: 2.2rem;
+            font-weight: 700;
+            color: #222;
+        }
+
+        .attributes {
+            display: flex;
+            gap: 15px;
+        }
+
+        .attribute {
+            display: flex;
+            align-items: center;
+            font-size: 0.85rem;
+            color: #666;
+        }
+
+        .attribute i {
+            color: #FF6A00;
+            margin-right: 5px;
+            font-size: 0.9rem;
+        }
+
+        .menu-section {
+            margin-bottom: 35px;
+        }
+
+        .section-title {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 1.6rem;
+            font-weight: 700;
+            color: #FF6A00;
+            margin-bottom: 20px;
+            padding-bottom: 8px;
+            border-bottom: 2px solid #FF6A00;
+            display: flex;
+            align-items: center;
+        }
+
+        .section-title i {
+            margin-right: 10px;
+            font-size: 1.4rem;
+        }
+
+        .menu-item {
+            margin-bottom: 18px;
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .item-details {
+            flex: 1;
+            padding-right: 15px;
+        }
+
+        .item-name {
+            font-family: 'Poppins', sans-serif;
+            font-weight: 600;
+            font-size: 1.1rem;
+            color: #333;
+            margin-bottom: 4px;
+        }
+
+        .item-description {
+            font-size: 0.95rem;
+            color: #666;
+            line-height: 1.5;
+        }
+
+        .item-price {
+            font-family: 'Poppins', sans-serif;
+            font-weight: 700;
+            font-size: 1.1rem;
+            color: #333;
+            white-space: nowrap;
+        }
+
+        .combos-section {
+            background: #fffaf5;
+            border: 2px solid #FF6A00;
+            border-radius: 12px;
+            padding: 25px;
+            margin-top: 30px;
+        }
+
+        .combos-title {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: #FF6A00;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        .page-footer {
+            position: absolute;
+            bottom: 40px;
+            left: 0;
+            right: 0;
+            text-align: center;
+            padding: 0 40px;
+        }
+
+        .footer-tagline {
+            font-family: 'Montserrat', sans-serif;
+            font-style: italic;
+            font-size: 1.1rem;
+            color: #555;
+            margin-bottom: 15px;
+        }
+
+        .footer-contact {
+            font-size: 1rem;
+            color: #777;
+        }
+
+        .footer-contact i {
+            color: #FF6A00;
+            margin: 0 5px;
+        }
+
+        /* IMAGENES MOCKUP */
+        .gourmet-image {
+            position: absolute;
+            width: 180px;
+            height: 180px;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+            z-index: 0;
+        }
+
+        .image-1 {
+            bottom: 120px;
+            right: 40px;
+            background: url('https://images.unsplash.com/photo-1540420773420-3366772f4999?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=684&q=80') center/cover;
+        }
+
+        .image-2 {
+            bottom: 150px;
+            left: 40px;
+            background: url('https://images.unsplash.com/photo-1615478503562-ec2d8aa0e24e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=687&q=80') center/cover;
+        }
+
+        /* RESPONSIVE */
+        @media (max-width: 768px) {
+            .cover, .page {
+                padding: 30px 20px;
+            }
+            
+            .logo {
+                font-size: 2.8rem;
+            }
+            
+            .tagline {
+                font-size: 1.8rem;
+            }
+            
+            .mockup-container {
+                height: 250px;
+            }
+            
+            .section-title {
+                font-size: 1.4rem;
+            }
+            
+            .gourmet-image {
+                width: 140px;
+                height: 140px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .logo {
+                font-size: 2.2rem;
+            }
+            
+            .tagline {
+                font-size: 1.4rem;
+            }
+            
+            .mockup-container {
+                height: 200px;
+            }
+            
+            .page-header {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 15px;
+            }
+            
+            .attributes {
+                flex-wrap: wrap;
+            }
+            
+            .gourmet-image {
+                display: none;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="menu-container">
+        <!-- PORTADA -->
+        <div class="cover">
+            <div class="logo-container">
+                <div class="logo">Yogurin Bustamante</div>
+            </div>
+            
+            <div class="product-showcase">
+                <div class="mockup-container">
+                    <div class="mockup-image"></div>
+                </div>
+                
+                <div class="tagline">Fresco, Natural y Sin Conservantes</div>
+            </div>
+            
+            <div class="contact-info">
+                <i class="fab fa-instagram"></i> @YogurinBustamante &nbsp;&nbsp;&nbsp;
+                <i class="fab fa-whatsapp"></i> +51 9XX XXX XXX
+            </div>
+        </div>
+        
+        <!-- PÁGINA INTERNA 1 -->
+        <div class="page">
+            <div class="page-header">
+                <div class="page-logo">Menú Principal</div>
+                <div class="attributes">
+                    <div class="attribute"><i class="fas fa-leaf"></i> Natural</div>
+                    <div class="attribute"><i class="fas fa-ban"></i> Sin conservantes</div>
+                    <div class="attribute"><i class="fas fa-child"></i> Ideal para niños</div>
+                </div>
+            </div>
+            
+            <div class="menu-section">
+                <div class="section-title">
+                    <i class="fas fa-glass-whiskey"></i> PARFAITS
+                </div>
+                
+                <div class="menu-item">
+                    <div class="item-details">
+                        <div class="item-name">Parfait Express (250 ml)</div>
+                        <div class="item-description">Yogurt natural cremoso, granola artesanal y fruta fresca de estación</div>
+                    </div>
+                    <div class="item-price">S/ 9</div>
+                </div>
+                
+                <div class="menu-item">
+                    <div class="item-details">
+                        <div class="item-name">Mango Parfait (250 ml)</div>
+                        <div class="item-description">Yogurt natural con puré de mango y crumble de avena</div>
+                    </div>
+                    <div class="item-price">S/ 9</div>
+                </div>
+                
+                <div class="menu-item">
+                    <div class="item-details">
+                        <div class="item-name">Berry & Chia Parfait (250 ml)</div>
+                        <div class="item-description">Chia, frutos rojos y miel en yogurt suave</div>
+                    </div>
+                    <div class="item-price">S/ 10</div>
+                </div>
+            </div>
+            
+            <div class="menu-section">
+                <div class="section-title">
+                    <i class="fas fa-mug-hot"></i> YOGURT BEBIBLE (250 ml)
+                </div>
+                
+                <div class="menu-item">
+                    <div class="item-details">
+                        <div class="item-name">Natural</div>
+                        <div class="item-description">Yogurt cremoso con toque de miel</div>
+                    </div>
+                    <div class="item-price">S/ 8</div>
+                </div>
+                
+                <div class="menu-item">
+                    <div class="item-details">
+                        <div class="item-name">Fresa</div>
+                        <div class="item-description">Puré de fresa natural mezclado con yogurt</div>
+                    </div>
+                    <div class="item-price">S/ 9</div>
+                </div>
+                
+                <div class="menu-item">
+                    <div class="item-details">
+                        <div class="item-name">Mango</div>
+                        <div class="item-description">Mango real licuado con yogurt natural</div>
+                    </div>
+                    <div class="item-price">S/ 9</div>
+                </div>
+            </div>
+            
+            <div class="menu-section">
+                <div class="section-title">
+                    <i class="fas fa-ice-cream"></i> PALETAS HELADAS DE YOGURT
+                </div>
+                
+                <div class="menu-item">
+                    <div class="item-details">
+                        <div class="item-name">Fresa & Yogurt (100 ml)</div>
+                        <div class="item-description">Cremosa paleta con trozos de fresa</div>
+                    </div>
+                    <div class="item-price">S/ 3.50 c/u</div>
+                </div>
+                
+                <div class="menu-item">
+                    <div class="item-details">
+                        <div class="item-name">Mango & Yogurt (100 ml)</div>
+                        <div class="item-description">Tropical y refrescante</div>
+                    </div>
+                    <div class="item-price">S/ 3.50 c/u</div>
+                </div>
+                
+                <div class="menu-item">
+                    <div class="item-details">
+                        <div class="item-name">Pack Verano (4 paletas surtidas)</div>
+                    </div>
+                    <div class="item-price">S/ 12</div>
+                </div>
+            </div>
+            
+            <div class="gourmet-image image-1"></div>
+            
+            <div class="page-footer">
+                <div class="footer-tagline">Fresco, natural y sin conservantes</div>
+                <div class="footer-contact">
+                    <i class="fab fa-instagram"></i> @YogurinBustamante &nbsp;&nbsp;&nbsp;
+                    <i class="fab fa-whatsapp"></i> +51 9XX XXX XXX
+                </div>
+            </div>
+        </div>
+        
+        <!-- PÁGINA INTERNA 2 -->
+        <div class="page">
+            <div class="page-header">
+                <div class="page-logo">Menú Principal</div>
+                <div class="attributes">
+                    <div class="attribute"><i class="fas fa-leaf"></i> Natural</div>
+                    <div class="attribute"><i class="fas fa-ban"></i> Sin conservantes</div>
+                    <div class="attribute"><i class="fas fa-child"></i> Ideal para niños</div>
+                </div>
+            </div>
+            
+            <div class="menu-section">
+                <div class="section-title">
+                    <i class="fas fa-box-open"></i> KIT "ARMA TU YOGURT" (250 ml)
+                </div>
+                
+                <div class="menu-item">
+                    <div class="item-details">
+                        <div class="item-name">Kit Snack</div>
+                        <div class="item-description">Frasco de yogurt + granola + fruta deshidratada</div>
+                    </div>
+                    <div class="item-price">S/ 10</div>
+                </div>
+                
+                <div class="menu-item">
+                    <div class="item-details">
+                        <div class="item-name">Kit Familiar (500 ml)</div>
+                        <div class="item-description">Mayor porción con doble topping</div>
+                    </div>
+                    <div class="item-price">S/ 15</div>
+                </div>
+            </div>
+            
+            <div class="menu-section">
+                <div class="section-title">
+                    <i class="fas fa-cookie"></i> BARRITAS FRÍAS
+                </div>
+                
+                <div class="menu-item">
+                    <div class="item-details">
+                        <div class="item-name">Barrita Yogurt-Avena</div>
+                        <div class="item-description">Avena y miel cubiertos con chocolate bitter</div>
+                    </div>
+                    <div class="item-price">S/ 3.50 c/u</div>
+                </div>
+                
+                <div class="menu-item">
+                    <div class="item-details">
+                        <div class="item-name">Pack 4 barritas</div>
+                    </div>
+                    <div class="item-price">S/ 12</div>
+                </div>
+            </div>
+            
+            <div class="combos-section">
+                <div class="combos-title">COMBOS DESTACADOS</div>
+                
+                <div class="menu-item">
+                    <div class="item-details">
+                        <div class="item-name">Snack Pack</div>
+                        <div class="item-description">Parfait + Bebible</div>
+                    </div>
+                    <div class="item-price">S/ 15</div>
+                </div>
+                
+                <div class="menu-item">
+                    <div class="item-details">
+                        <div class="item-name">Box Weekend</div>
+                        <div class="item-description">2 Parfaits + 2 Yogurts Bebibles + 2 Paletas</div>
+                    </div>
+                    <div class="item-price">S/ 35</div>
+                </div>
+            </div>
+            
+            <div class="gourmet-image image-2"></div>
+            
+            <div class="page-footer">
+                <div class="footer-tagline">Fresco, natural y sin conservantes</div>
+                <div class="footer-contact">
+                    <i class="fab fa-instagram"></i> @YogurinBustamante &nbsp;&nbsp;&nbsp;
+                    <i class="fab fa-whatsapp"></i> +51 9XX XXX XXX
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,1078 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora de Rentabilidad - Yogurt Artesanal</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Poppins:wght@300;400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: linear-gradient(135deg, #f9f7fe 0%, #e3f2fd 100%);
+            color: #333;
+            line-height: 1.6;
+            padding: 20px;
+            min-height: 100vh;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        header {
+            text-align: center;
+            padding: 30px 0;
+            background: linear-gradient(120deg, #6a11cb 0%, #2575fc 100%);
+            color: white;
+            border-radius: 15px;
+            margin-bottom: 30px;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+        }
+        
+        header h1 {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 700;
+            font-size: 2.8rem;
+            margin-bottom: 10px;
+        }
+        
+        header p {
+            font-size: 1.2rem;
+            max-width: 800px;
+            margin: 0 auto;
+            opacity: 0.9;
+        }
+        
+        .logo {
+            font-size: 3rem;
+            margin-bottom: 15px;
+            color: #ffd166;
+        }
+        
+        .dashboard {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 25px;
+            margin-bottom: 30px;
+        }
+        
+        @media (max-width: 768px) {
+            .dashboard {
+                grid-template-columns: 1fr;
+            }
+        }
+        
+        .card {
+            background: white;
+            border-radius: 15px;
+            padding: 25px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+        }
+        
+        .card h2 {
+            font-family: 'Montserrat', sans-serif;
+            color: #2d3748;
+            margin-bottom: 20px;
+            padding-bottom: 15px;
+            border-bottom: 2px solid #e2e8f0;
+            display: flex;
+            align-items: center;
+        }
+        
+        .card h2 i {
+            margin-right: 12px;
+            color: #4a6cf7;
+        }
+        
+        .input-group {
+            margin-bottom: 20px;
+        }
+        
+        .input-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 500;
+            color: #4a5568;
+        }
+        
+        .input-group input, .input-group select {
+            width: 100%;
+            padding: 12px 15px;
+            border: 1px solid #cbd5e0;
+            border-radius: 8px;
+            font-size: 1rem;
+            transition: border-color 0.3s;
+        }
+        
+        .input-group input:focus, .input-group select:focus {
+            outline: none;
+            border-color: #4a6cf7;
+            box-shadow: 0 0 0 3px rgba(74, 108, 247, 0.1);
+        }
+        
+        .btn {
+            background: linear-gradient(120deg, #6a11cb 0%, #2575fc 100%);
+            color: white;
+            border: none;
+            padding: 14px 25px;
+            border-radius: 8px;
+            font-size: 1.1rem;
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: block;
+            width: 100%;
+            margin-top: 20px;
+        }
+        
+        .btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 7px 15px rgba(37, 117, 252, 0.3);
+        }
+        
+        .results {
+            background: white;
+            border-radius: 15px;
+            padding: 25px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            margin-top: 30px;
+        }
+        
+        .results-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin-top: 20px;
+        }
+        
+        .result-card {
+            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+            border-radius: 12px;
+            padding: 20px;
+            text-align: center;
+            border-left: 4px solid #4a6cf7;
+        }
+        
+        .result-card h3 {
+            font-size: 1.1rem;
+            color: #4a5568;
+            margin-bottom: 10px;
+        }
+        
+        .result-card .value {
+            font-size: 2rem;
+            font-weight: 700;
+            color: #2d3748;
+            font-family: 'Montserrat', sans-serif;
+        }
+        
+        .positive {
+            color: #10b981 !important;
+        }
+        
+        .negative {
+            color: #ef4444 !important;
+        }
+        
+        .charts-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 25px;
+            margin-top: 30px;
+        }
+        
+        @media (max-width: 992px) {
+            .charts-container {
+                grid-template-columns: 1fr;
+            }
+        }
+        
+        .chart-card {
+            background: white;
+            border-radius: 15px;
+            padding: 25px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+        }
+        
+        .chart-container {
+            height: 300px;
+            position: relative;
+        }
+        
+        .product-cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 25px;
+            margin-top: 30px;
+        }
+        
+        .product-card {
+            background: white;
+            border-radius: 15px;
+            padding: 20px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            border-top: 4px solid #4a6cf7;
+        }
+        
+        .product-card h3 {
+            font-family: 'Montserrat', sans-serif;
+            color: #2d3748;
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+        }
+        
+        .product-card h3 i {
+            margin-right: 10px;
+            color: #4a6cf7;
+        }
+        
+        .product-stats {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 15px;
+            margin-top: 15px;
+        }
+        
+        .stat {
+            background: #f8f9fa;
+            border-radius: 8px;
+            padding: 12px;
+        }
+        
+        .stat .label {
+            font-size: 0.9rem;
+            color: #4a5568;
+        }
+        
+        .stat .val {
+            font-size: 1.3rem;
+            font-weight: 600;
+            color: #2d3748;
+            font-family: 'Montserrat', sans-serif;
+        }
+        
+        .profit {
+            color: #10b981;
+        }
+        
+        .footer {
+            text-align: center;
+            margin-top: 40px;
+            padding: 20px;
+            color: #4a5568;
+            font-size: 0.9rem;
+        }
+        
+        .tab-container {
+            margin-top: 30px;
+        }
+        
+        .tabs {
+            display: flex;
+            background: white;
+            border-radius: 12px 12px 0 0;
+            overflow: hidden;
+        }
+        
+        .tab {
+            flex: 1;
+            padding: 15px;
+            text-align: center;
+            background: #edf2f7;
+            cursor: pointer;
+            font-weight: 500;
+            transition: all 0.3s;
+        }
+        
+        .tab.active {
+            background: #4a6cf7;
+            color: white;
+        }
+        
+        .tab-content {
+            background: white;
+            padding: 25px;
+            border-radius: 0 0 12px 12px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+        }
+        
+        .tab-pane {
+            display: none;
+        }
+        
+        .tab-pane.active {
+            display: block;
+        }
+        
+        .product-details {
+            margin-top: 20px;
+        }
+        
+        .product-details h4 {
+            color: #4a6cf7;
+            margin-bottom: 10px;
+            padding-bottom: 5px;
+            border-bottom: 1px solid #e2e8f0;
+        }
+        
+        .product-details ul {
+            padding-left: 20px;
+            margin-bottom: 15px;
+        }
+        
+        .product-details li {
+            margin-bottom: 8px;
+        }
+        
+        .highlight {
+            background: linear-gradient(120deg, rgba(106, 17, 203, 0.1) 0%, rgba(37, 117, 252, 0.1) 100%);
+            padding: 15px;
+            border-radius: 8px;
+            margin: 15px 0;
+            border-left: 4px solid #4a6cf7;
+        }
+        
+        .summary-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 15px;
+            margin-top: 20px;
+        }
+        
+        .summary-item {
+            background: #f8f9fa;
+            border-radius: 8px;
+            padding: 15px;
+            text-align: center;
+        }
+        
+        .summary-item .label {
+            font-size: 0.9rem;
+            color: #4a5568;
+        }
+        
+        .summary-item .value {
+            font-size: 1.4rem;
+            font-weight: 700;
+            color: #2d3748;
+            font-family: 'Montserrat', sans-serif;
+            margin-top: 5px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div class="logo">
+                <i class="fas fa-blender"></i>
+            </div>
+            <h1>Calculadora de Rentabilidad</h1>
+            <p>Herramienta para optimizar tu producción de yogurt artesanal</p>
+        </header>
+        
+        <div class="dashboard">
+            <div class="card">
+                <h2><i class="fas fa-cogs"></i> Parámetros Básicos</h2>
+                
+                <div class="input-group">
+                    <label for="yogurt-cost">Costo del yogurt por litro (S/)</label>
+                    <input type="number" id="yogurt-cost" step="0.1" min="0" value="8.00">
+                </div>
+                
+                <div class="input-group">
+                    <label for="weekly-production">Producción semanal total (litros)</label>
+                    <input type="number" id="weekly-production" min="1" value="20">
+                </div>
+                
+                <div class="input-group">
+                    <label for="bebible-flavored">% Yogurt Bebible saborizado</label>
+                    <input type="number" id="bebible-flavored" min="0" max="100" value="50">
+                </div>
+            </div>
+            
+            <div class="card">
+                <h2><i class="fas fa-chart-pie"></i> Distribución de Producción</h2>
+                
+                <div class="input-group">
+                    <label for="parfait-liters">Parfait Express (litros)</label>
+                    <input type="number" id="parfait-liters" min="0" value="5">
+                </div>
+                
+                <div class="input-group">
+                    <label for="mango-liters">Mango Parfait (litros)</label>
+                    <input type="number" id="mango-liters" min="0" value="4">
+                </div>
+                
+                <div class="input-group">
+                    <label for="bebible-liters">Yogurt Bebible (litros)</label>
+                    <input type="number" id="bebible-liters" min="0" value="5">
+                </div>
+                
+                <div class="input-group">
+                    <label for="paletas-liters">Paletas (litros)</label>
+                    <input type="number" id="paletas-liters" min="0" value="3">
+                </div>
+                
+                <div class="input-group">
+                    <label for="barritas-liters">Barritas (litros)</label>
+                    <input type="number" id="barritas-liters" min="0" value="3">
+                </div>
+                
+                <button id="calculate-btn" class="btn">Calcular Rentabilidad</button>
+            </div>
+        </div>
+        
+        <div class="results">
+            <h2><i class="fas fa-chart-line"></i> Resultados Semanales</h2>
+            
+            <div class="results-grid">
+                <div class="result-card">
+                    <h3>Ingresos Totales</h3>
+                    <div class="value" id="total-income">S/ 715.00</div>
+                </div>
+                
+                <div class="result-card">
+                    <h3>Costos Totales</h3>
+                    <div class="value" id="total-cost">S/ 309.52</div>
+                </div>
+                
+                <div class="result-card">
+                    <h3>Ganancia Neta</h3>
+                    <div class="value positive" id="net-profit">S/ 405.48</div>
+                </div>
+                
+                <div class="result-card">
+                    <h3>Margen de Ganancia</h3>
+                    <div class="value positive" id="profit-margin">56.71%</div>
+                </div>
+            </div>
+            
+            <div class="charts-container">
+                <div class="chart-card">
+                    <h3>Distribución de Ingresos</h3>
+                    <div class="chart-container">
+                        <canvas id="income-chart"></canvas>
+                    </div>
+                </div>
+                
+                <div class="chart-card">
+                    <h3>Rentabilidad por Producto</h3>
+                    <div class="chart-container">
+                        <canvas id="profit-chart"></canvas>
+                    </div>
+                </div>
+            </div>
+            
+            <h2 style="margin-top: 30px;"><i class="fas fa-box-open"></i> Rentabilidad por Producto</h2>
+            
+            <div class="product-cards">
+                <div class="product-card">
+                    <h3><i class="fas fa-glass-whiskey"></i> Parfait Express</h3>
+                    <div class="product-stats">
+                        <div class="stat">
+                            <div class="label">Unidades</div>
+                            <div class="val" id="parfait-units">20</div>
+                        </div>
+                        <div class="stat">
+                            <div class="label">Ingresos</div>
+                            <div class="val" id="parfait-income">S/ 180.00</div>
+                        </div>
+                        <div class="stat">
+                            <div class="label">Costos</div>
+                            <div class="val" id="parfait-cost">S/ 82.00</div>
+                        </div>
+                        <div class="stat">
+                            <div class="label">Ganancia</div>
+                            <div class="val profit" id="parfait-profit">S/ 98.00</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="product-card">
+                    <h3><i class="fas fa-apple-alt"></i> Mango Parfait</h3>
+                    <div class="product-stats">
+                        <div class="stat">
+                            <div class="label">Unidades</div>
+                            <div class="val" id="mango-units">16</div>
+                        </div>
+                        <div class="stat">
+                            <div class="label">Ingresos</div>
+                            <div class="val" id="mango-income">S/ 144.00</div>
+                        </div>
+                        <div class="stat">
+                            <div class="label">Costos</div>
+                            <div class="val" id="mango-cost">S/ 68.80</div>
+                        </div>
+                        <div class="stat">
+                            <div class="label">Ganancia</div>
+                            <div class="val profit" id="mango-profit">S/ 75.20</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="product-card">
+                    <h3><i class="fas fa-wine-bottle"></i> Yogurt Bebible</h3>
+                    <div class="product-stats">
+                        <div class="stat">
+                            <div class="label">Unidades</div>
+                            <div class="val" id="bebible-units">20</div>
+                        </div>
+                        <div class="stat">
+                            <div class="label">Ingresos</div>
+                            <div class="val" id="bebible-income">S/ 160.00</div>
+                        </div>
+                        <div class="stat">
+                            <div class="label">Costos</div>
+                            <div class="val" id="bebible-cost">S/ 62.00</div>
+                        </div>
+                        <div class="stat">
+                            <div class="label">Ganancia</div>
+                            <div class="val profit" id="bebible-profit">S/ 98.00</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="product-card">
+                    <h3><i class="fas fa-ice-cream"></i> Paletas</h3>
+                    <div class="product-stats">
+                        <div class="stat">
+                            <div class="label">Unidades</div>
+                            <div class="val" id="paletas-units">30</div>
+                        </div>
+                        <div class="stat">
+                            <div class="label">Ingresos</div>
+                            <div class="val" id="paletas-income">S/ 105.00</div>
+                        </div>
+                        <div class="stat">
+                            <div class="label">Costos</div>
+                            <div class="val" id="paletas-cost">S/ 42.00</div>
+                        </div>
+                        <div class="stat">
+                            <div class="label">Ganancia</div>
+                            <div class="val profit" id="paletas-profit">S/ 63.00</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="product-card">
+                    <h3><i class="fas fa-cookie-bite"></i> Barritas</h3>
+                    <div class="product-stats">
+                        <div class="stat">
+                            <div class="label">Unidades</div>
+                            <div class="val" id="barritas-units">36</div>
+                        </div>
+                        <div class="stat">
+                            <div class="label">Ingresos</div>
+                            <div class="val" id="barritas-income">S/ 126.00</div>
+                        </div>
+                        <div class="stat">
+                            <div class="label">Costos</div>
+                            <div class="val" id="barritas-cost">S/ 54.72</div>
+                        </div>
+                        <div class="stat">
+                            <div class="label">Ganancia</div>
+                            <div class="val profit" id="barritas-profit">S/ 71.28</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="tab-container">
+            <div class="tabs">
+                <div class="tab active" data-tab="costos">Detalles de Costos</div>
+                <div class="tab" data-tab="recomendaciones">Recomendaciones</div>
+                <div class="tab" data-tab="inversion">Inversión Inicial</div>
+            </div>
+            
+            <div class="tab-content">
+                <div class="tab-pane active" id="costos">
+                    <h3>Costos Detallados por Producto</h3>
+                    
+                    <div class="product-details">
+                        <h4>Parfait Express (250 ml)</h4>
+                        <ul>
+                            <li><strong>Yogurt:</strong> S/ 2.00 (0.25L a S/8.00/L)</li>
+                            <li><strong>Fruta:</strong> S/ 0.80 (50g)</li>
+                            <li><strong>Granola:</strong> S/ 0.60 (30g)</li>
+                            <li><strong>Envase:</strong> S/ 0.60 (vaso + tapa)</li>
+                            <li><strong>Misceláneos:</strong> S/ 0.10</li>
+                        </ul>
+                        <div class="highlight">
+                            <strong>Costo total por unidad:</strong> S/ 4.10
+                        </div>
+                    </div>
+                    
+                    <div class="product-details">
+                        <h4>Mango Parfait (250 ml)</h4>
+                        <ul>
+                            <li><strong>Yogurt:</strong> S/ 2.00</li>
+                            <li><strong>Puré de mango:</strong> S/ 1.00</li>
+                            <li><strong>Granola:</strong> S/ 0.60</li>
+                            <li><strong>Envase:</strong> S/ 0.60</li>
+                            <li><strong>Misceláneos:</strong> S/ 0.10</li>
+                        </ul>
+                        <div class="highlight">
+                            <strong>Costo total por unidad:</strong> S/ 4.30
+                        </div>
+                    </div>
+                    
+                    <div class="product-details">
+                        <h4>Yogurt Bebible (250 ml)</h4>
+                        <ul>
+                            <li><strong>Yogurt:</strong> S/ 2.00</li>
+                            <li><strong>Envase:</strong> S/ 0.60 (botella + tapa)</li>
+                            <li><strong>Pulpa de fruta:</strong> S/ 0.30</li>
+                            <li><strong>Endulzante:</strong> S/ 0.05</li>
+                            <li><strong>Etiqueta:</strong> S/ 0.15</li>
+                        </ul>
+                        <div class="highlight">
+                            <strong>Costo total por unidad:</strong> S/ 3.10
+                        </div>
+                    </div>
+                    
+                    <div class="product-details">
+                        <h4>Paletas Heladas (100 ml)</h4>
+                        <ul>
+                            <li><strong>Yogurt:</strong> S/ 0.80 (0.10L)</li>
+                            <li><strong>Molde + envoltorio:</strong> S/ 0.30</li>
+                            <li><strong>Fruta:</strong> S/ 0.15</li>
+                            <li><strong>Misceláneos:</strong> S/ 0.15 (electricidad)</li>
+                        </ul>
+                        <div class="highlight">
+                            <strong>Costo total por unidad:</strong> S/ 1.40
+                        </div>
+                    </div>
+                    
+                    <div class="product-details">
+                        <h4>Barritas Frías</h4>
+                        <ul>
+                            <li><strong>Yogurt:</strong> S/ 0.67 (83ml)</li>
+                            <li><strong>Avena, miel, frutos secos:</strong> S/ 0.45</li>
+                            <li><strong>Cobertura de chocolate:</strong> S/ 0.20</li>
+                            <li><strong>Envoltorio:</strong> S/ 0.20</li>
+                        </ul>
+                        <div class="highlight">
+                            <strong>Costo total por unidad:</strong> S/ 1.52
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="tab-pane" id="recomendaciones">
+                    <h3>Estrategias para Mejorar Rentabilidad</h3>
+                    
+                    <div class="highlight">
+                        <h4>Optimización de Costos</h4>
+                        <ul>
+                            <li><strong>Compras a granel:</strong> Fruta, granola y envases con descuentos por volumen</li>
+                            <li><strong>Envases retornables:</strong> Sistema de depósito para botellas de vidrio</li>
+                            <li><strong>Fruta de temporada:</strong> Utilizar frutas locales en temporada alta</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="highlight">
+                        <h4>Aumento de Ventas</h4>
+                        <ul>
+                            <li><strong>Combos:</strong> "Snack Pack" con yogurt + barrita + paleta</li>
+                            <li><strong>Contratos B2B:</strong> Oficinas y gimnasios con pedidos semanales</li>
+                            <li><strong>Toppings premium:</strong> Frutos secos, chocolate gourmet, miel artesanal</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="highlight">
+                        <h4>Gestión de Inventario</h4>
+                        <ul>
+                            <li><strong>Paletas como stock buffer:</strong> Larga vida útil permite producción anticipada</li>
+                            <li><strong>FIFO estricto:</strong> Primero en entrar, primero en salir</li>
+                            <li><strong>Producción just-in-time:</strong> Para productos perecederos (parfaits)</li>
+                        </ul>
+                    </div>
+                    
+                    <h3 style="margin-top: 25px;">Vida Útil y Conservación</h3>
+                    <div class="summary-grid">
+                        <div class="summary-item">
+                            <div class="label">Parfaits</div>
+                            <div class="value">48-72h</div>
+                            <div class="label">4°C</div>
+                        </div>
+                        <div class="summary-item">
+                            <div class="label">Yogurt Bebible</div>
+                            <div class="value">48-72h</div>
+                            <div class="label">4°C</div>
+                        </div>
+                        <div class="summary-item">
+                            <div class="label">Paletas</div>
+                            <div class="value">3 meses</div>
+                            <div class="label">-18°C</div>
+                        </div>
+                        <div class="summary-item">
+                            <div class="label">Barritas</div>
+                            <div class="value">5-7 días</div>
+                            <div class="label">4°C</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="tab-pane" id="inversion">
+                    <h3>Inversión Inicial Estimada</h3>
+                    
+                    <div class="highlight">
+                        <h4>Inversión Operativa (Primera Semana)</h4>
+                        <ul>
+                            <li><strong>Ingredientes + envases:</strong> S/ 310.00</li>
+                            <li><strong>Caja de emergencias:</strong> S/ 40.00</li>
+                        </ul>
+                        <div style="margin-top: 10px; font-weight: bold;">
+                            Total operativo: S/ 350.00
+                        </div>
+                    </div>
+                    
+                    <div class="highlight">
+                        <h4>Equipamiento (Inversión Única)</h4>
+                        <ul>
+                            <li><strong>Congeladora comercial:</strong> S/ 1,200 - S/ 2,500</li>
+                            <li><strong>Licuadora industrial:</strong> S/ 250 - S/ 600</li>
+                            <li><strong>Moldes para paletas:</strong> S/ 50 - S/ 200</li>
+                            <li><strong>Envases iniciales:</strong> S/ 200 - S/ 400</li>
+                            <li><strong>Selladora/impresora:</strong> S/ 200 - S/ 700 (opcional)</li>
+                        </ul>
+                        <div style="margin-top: 10px; font-weight: bold;">
+                            Inversión total estimada: S/ 2,000 - S/ 4,000
+                        </div>
+                    </div>
+                    
+                    <h3>Proyección de Recuperación</h3>
+                    <div class="summary-grid">
+                        <div class="summary-item">
+                            <div class="label">Ganancia semanal</div>
+                            <div class="value">S/ 405.48</div>
+                        </div>
+                        <div class="summary-item">
+                            <div class="label">Inversión inicial</div>
+                            <div class="value">S/ 3,000.00</div>
+                        </div>
+                        <div class="summary-item">
+                            <div class="label">Semanas para recuperar</div>
+                            <div class="value">7.4</div>
+                        </div>
+                        <div class="summary-item">
+                            <div class="label">ROI anual</div>
+                            <div class="value positive">602%</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="footer">
+            <p>Calculadora desarrollada para tu negocio de yogurt artesanal | © 2023</p>
+        </div>
+    </div>
+    
+    <script>
+        // Datos iniciales
+        const products = {
+            parfait: {
+                name: 'Parfait Express',
+                unitsPerLiter: 4,
+                sellingPrice: 9.00,
+                costs: {
+                    yogurt: 2.00,
+                    fruit: 0.80,
+                    granola: 0.60,
+                    packaging: 0.60,
+                    misc: 0.10
+                },
+                liters: 5
+            },
+            mango: {
+                name: 'Mango Parfait',
+                unitsPerLiter: 4,
+                sellingPrice: 9.00,
+                costs: {
+                    yogurt: 2.00,
+                    fruit: 1.00,
+                    granola: 0.60,
+                    packaging: 0.60,
+                    misc: 0.10
+                },
+                liters: 4
+            },
+            bebible: {
+                name: 'Yogurt Bebible',
+                unitsPerLiter: 4,
+                sellingPriceNatural: 8.00,
+                sellingPriceFlavored: 9.00,
+                costs: {
+                    yogurt: 2.00,
+                    packaging: 0.60,
+                    fruit: 0.30,
+                    sweetener: 0.05,
+                    label: 0.15
+                },
+                liters: 5,
+                flavoredPercentage: 50
+            },
+            paletas: {
+                name: 'Paletas',
+                unitsPerLiter: 10,
+                sellingPrice: 3.50,
+                costs: {
+                    yogurt: 0.80,
+                    packaging: 0.30,
+                    fruit: 0.15,
+                    misc: 0.15
+                },
+                liters: 3
+            },
+            barritas: {
+                name: 'Barritas',
+                unitsPerLiter: 12,
+                sellingPrice: 3.50,
+                costs: {
+                    yogurt: 0.67,
+                    mix: 0.45,
+                    chocolate: 0.20,
+                    packaging: 0.20
+                },
+                liters: 3
+            }
+        };
+        
+        // Inicializar gráficos
+        const incomeChart = new Chart(document.getElementById('income-chart'), {
+            type: 'doughnut',
+            data: {
+                labels: [
+                    'Parfait Express', 
+                    'Mango Parfait', 
+                    'Yogurt Bebible', 
+                    'Paletas', 
+                    'Barritas'
+                ],
+                datasets: [{
+                    data: [180, 144, 160, 105, 126],
+                    backgroundColor: [
+                        '#4a6cf7',
+                        '#6a11cb',
+                        '#2575fc',
+                        '#8f44fd',
+                        '#3b8ffc'
+                    ]
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                plugins: {
+                    legend: {
+                        position: 'right'
+                    }
+                }
+            }
+        });
+        
+        const profitChart = new Chart(document.getElementById('profit-chart'), {
+            type: 'bar',
+            data: {
+                labels: [
+                    'Parfait Express', 
+                    'Mango Parfait', 
+                    'Yogurt Bebible', 
+                    'Paletas', 
+                    'Barritas'
+                ],
+                datasets: [{
+                    label: 'Ganancia por Producto (S/)',
+                    data: [98, 75.2, 98, 63, 71.28],
+                    backgroundColor: '#10b981'
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                scales: {
+                    y: {
+                        beginAtZero: true
+                    }
+                }
+            }
+        });
+        
+        // Funciones de cálculo
+        function calculateUnitCost(product) {
+            let cost = 0;
+            for (const key in product.costs) {
+                cost += product.costs[key];
+            }
+            return cost;
+        }
+        
+        function calculateProductProfit(product) {
+            const unitCost = calculateUnitCost(product);
+            let units = product.liters * product.unitsPerLiter;
+            let revenue, cost;
+            
+            if (product.name === 'Yogurt Bebible') {
+                const naturalUnits = units * (1 - product.flavoredPercentage/100);
+                const flavoredUnits = units * (product.flavoredPercentage/100);
+                
+                revenue = (naturalUnits * product.sellingPriceNatural) + 
+                          (flavoredUnits * product.sellingPriceFlavored);
+            } else {
+                revenue = units * product.sellingPrice;
+            }
+            
+            cost = units * unitCost;
+            return {
+                units: Math.round(units),
+                revenue: revenue,
+                cost: cost,
+                profit: revenue - cost
+            };
+        }
+        
+        function calculateTotals() {
+            const results = {};
+            let totalRevenue = 0;
+            let totalCost = 0;
+            
+            for (const key in products) {
+                results[key] = calculateProductProfit(products[key]);
+                totalRevenue += results[key].revenue;
+                totalCost += results[key].cost;
+            }
+            
+            return {
+                details: results,
+                totalRevenue: totalRevenue,
+                totalCost: totalCost,
+                netProfit: totalRevenue - totalCost,
+                profitMargin: ((totalRevenue - totalCost) / totalRevenue) * 100
+            };
+        }
+        
+        // Actualizar datos en la página
+        function updateUI() {
+            const totals = calculateTotals();
+            
+            // Actualizar resumen
+            document.getElementById('total-income').textContent = `S/ ${totals.totalRevenue.toFixed(2)}`;
+            document.getElementById('total-cost').textContent = `S/ ${totals.totalCost.toFixed(2)}`;
+            document.getElementById('net-profit').textContent = `S/ ${totals.netProfit.toFixed(2)}`;
+            document.getElementById('profit-margin').textContent = `${totals.profitMargin.toFixed(2)}%`;
+            
+            // Actualizar por producto
+            document.getElementById('parfait-units').textContent = totals.details.parfait.units;
+            document.getElementById('parfait-income').textContent = `S/ ${totals.details.parfait.revenue.toFixed(2)}`;
+            document.getElementById('parfait-cost').textContent = `S/ ${totals.details.parfait.cost.toFixed(2)}`;
+            document.getElementById('parfait-profit').textContent = `S/ ${totals.details.parfait.profit.toFixed(2)}`;
+            
+            document.getElementById('mango-units').textContent = totals.details.mango.units;
+            document.getElementById('mango-income').textContent = `S/ ${totals.details.mango.revenue.toFixed(2)}`;
+            document.getElementById('mango-cost').textContent = `S/ ${totals.details.mango.cost.toFixed(2)}`;
+            document.getElementById('mango-profit').textContent = `S/ ${totals.details.mango.profit.toFixed(2)}`;
+            
+            document.getElementById('bebible-units').textContent = totals.details.bebible.units;
+            document.getElementById('bebible-income').textContent = `S/ ${totals.details.bebible.revenue.toFixed(2)}`;
+            document.getElementById('bebible-cost').textContent = `S/ ${totals.details.bebible.cost.toFixed(2)}`;
+            document.getElementById('bebible-profit').textContent = `S/ ${totals.details.bebible.profit.toFixed(2)}`;
+            
+            document.getElementById('paletas-units').textContent = totals.details.paletas.units;
+            document.getElementById('paletas-income').textContent = `S/ ${totals.details.paletas.revenue.toFixed(2)}`;
+            document.getElementById('paletas-cost').textContent = `S/ ${totals.details.paletas.cost.toFixed(2)}`;
+            document.getElementById('paletas-profit').textContent = `S/ ${totals.details.paletas.profit.toFixed(2)}`;
+            
+            document.getElementById('barritas-units').textContent = totals.details.barritas.units;
+            document.getElementById('barritas-income').textContent = `S/ ${totals.details.barritas.revenue.toFixed(2)}`;
+            document.getElementById('barritas-cost').textContent = `S/ ${totals.details.barritas.cost.toFixed(2)}`;
+            document.getElementById('barritas-profit').textContent = `S/ ${totals.details.barritas.profit.toFixed(2)}`;
+            
+            // Actualizar gráficos
+            incomeChart.data.datasets[0].data = [
+                totals.details.parfait.revenue,
+                totals.details.mango.revenue,
+                totals.details.bebible.revenue,
+                totals.details.paletas.revenue,
+                totals.details.barritas.revenue
+            ];
+            incomeChart.update();
+            
+            profitChart.data.datasets[0].data = [
+                totals.details.parfait.profit,
+                totals.details.mango.profit,
+                totals.details.bebible.profit,
+                totals.details.paletas.profit,
+                totals.details.barritas.profit
+            ];
+            profitChart.update();
+        }
+        
+        // Manejar cambios en los inputs
+        document.getElementById('calculate-btn').addEventListener('click', function() {
+            // Actualizar costos base
+            const yogurtCost = parseFloat(document.getElementById('yogurt-cost').value);
+            
+            products.parfait.costs.yogurt = yogurtCost * 0.25;
+            products.mango.costs.yogurt = yogurtCost * 0.25;
+            products.bebible.costs.yogurt = yogurtCost * 0.25;
+            products.paletas.costs.yogurt = yogurtCost * 0.1;
+            products.barritas.costs.yogurt = yogurtCost / 12;
+            
+            // Actualizar producción
+            products.parfait.liters = parseFloat(document.getElementById('parfait-liters').value);
+            products.mango.liters = parseFloat(document.getElementById('mango-liters').value);
+            products.bebible.liters = parseFloat(document.getElementById('bebible-liters').value);
+            products.paletas.liters = parseFloat(document.getElementById('paletas-liters').value);
+            products.barritas.liters = parseFloat(document.getElementById('barritas-liters').value);
+            
+            // Actualizar porcentaje de bebible saborizado
+            products.bebible.flavoredPercentage = parseFloat(document.getElementById('bebible-flavored').value);
+            
+            // Recalcular todo
+            updateUI();
+        });
+        
+        // Tabs functionality
+        document.querySelectorAll('.tab').forEach(tab => {
+            tab.addEventListener('click', function() {
+                // Remove active class from all tabs
+                document.querySelectorAll('.tab').forEach(t => {
+                    t.classList.remove('active');
+                });
+                
+                // Add active class to clicked tab
+                this.classList.add('active');
+                
+                // Hide all tab panes
+                document.querySelectorAll('.tab-pane').forEach(pane => {
+                    pane.classList.remove('active');
+                });
+                
+                // Show corresponding pane
+                const tabId = this.getAttribute('data-tab');
+                document.getElementById(tabId).classList.add('active');
+            });
+        });
+        
+        // Initialize with default values
+        updateUI();
+    </script>
+</body>
+</html>
