@@ -1,79 +1,225 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Yogurin Bustamante - Yogurt natural peruano de la más alta calidad. Venta de productos lácteos artesanales para toda la comunidad del Perú.">
-    <meta name="keywords" content="yogurt, yogurt natural, productos lácteos, yogurt peruano, yogurt artesanal, Yogurin">
+    <meta name="description"
+        content="Yogurin Bustamante - Yogurt natural peruano de la más alta calidad. Venta de productos lácteos artesanales para toda la comunidad del Perú.">
+    <meta name="keywords"
+        content="yogurt, yogurt natural, productos lácteos, yogurt peruano, yogurt artesanal, Yogurin">
     <title>Yogurin Bustamante | Yogurt Artesanal</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap');
-        * { font-family: 'Poppins', sans-serif; }
-        .gradient-bg { background: linear-gradient(135deg, #87CEEB 0%, #FF8C00 100%); }
-        @keyframes fadeIn { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
-        @keyframes slideIn { from { transform: translateX(-100%); opacity: 0; } to { transform: translateX(0); opacity: 1; } }
-        @keyframes pulse { 0%, 100% { transform: scale(1); } 50% { transform: scale(1.1); } }
-        @keyframes float { 0%, 100% { transform: translate(0, 0) rotate(0deg); } 33% { transform: translate(30px, -30px) rotate(120deg); } 66% { transform: translate(-20px, 20px) rotate(240deg); } }
-        .animate-fade-in { animation: fadeIn 0.8s ease-in; }
-        .animate-slide-in { animation: slideIn 1s ease-out; }
-        .hover-lift { transition: transform 0.3s ease, box-shadow 0.3s ease; }
-        .hover-lift:hover { transform: translateY(-10px); box-shadow: 0 20px 40px rgba(255, 140, 0, 0.3); }
-        .whatsapp-float { position: fixed; bottom: 30px; right: 30px; background: #25D366; color: white; width: 60px; height: 60px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 30px; box-shadow: 0 4px 20px rgba(37, 211, 102, 0.5); z-index: 1000; animation: pulse 2s infinite; cursor: pointer; }
-        .product-card { transition: all 0.3s ease; position: relative; overflow: hidden; }
-        .product-card::before { content: ''; position: absolute; top: 0; left: -100%; width: 100%; height: 100%; background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent); transition: left 0.5s; }
-        .product-card:hover::before { left: 100%; }
-        .nav-link { position: relative; transition: color 0.3s; }
-        .nav-link::after { content: ''; position: absolute; bottom: -5px; left: 0; width: 0; height: 2px; background: #FF8C00; transition: width 0.3s; }
-        .nav-link:hover::after { width: 100%; }
-        .blob { position: absolute; border-radius: 50%; filter: blur(60px); opacity: 0.3; animation: float 6s ease-in-out infinite; }
+
+        * {
+            font-family: 'Poppins', sans-serif;
+        }
+
+        .gradient-bg {
+            background: linear-gradient(135deg, #87CEEB 0%, #FF8C00 100%);
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes slideIn {
+            from {
+                transform: translateX(-100%);
+                opacity: 0;
+            }
+
+            to {
+                transform: translateX(0);
+                opacity: 1;
+            }
+        }
+
+        @keyframes pulse {
+
+            0%,
+            100% {
+                transform: scale(1);
+            }
+
+            50% {
+                transform: scale(1.1);
+            }
+        }
+
+        @keyframes float {
+
+            0%,
+            100% {
+                transform: translate(0, 0) rotate(0deg);
+            }
+
+            33% {
+                transform: translate(30px, -30px) rotate(120deg);
+            }
+
+            66% {
+                transform: translate(-20px, 20px) rotate(240deg);
+            }
+        }
+
+        .animate-fade-in {
+            animation: fadeIn 0.8s ease-in;
+        }
+
+        .animate-slide-in {
+            animation: slideIn 1s ease-out;
+        }
+
+        .hover-lift {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .hover-lift:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(255, 140, 0, 0.3);
+        }
+
+        .whatsapp-float {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            background: #25D366;
+            color: white;
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 30px;
+            box-shadow: 0 4px 20px rgba(37, 211, 102, 0.5);
+            z-index: 1000;
+            animation: pulse 2s infinite;
+            cursor: pointer;
+        }
+
+        .product-card {
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .product-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+            transition: left 0.5s;
+        }
+
+        .product-card:hover::before {
+            left: 100%;
+        }
+
+        .nav-link {
+            position: relative;
+            transition: color 0.3s;
+        }
+
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: #FF8C00;
+            transition: width 0.3s;
+        }
+
+        .nav-link:hover::after {
+            width: 100%;
+        }
+
+        .blob {
+            position: absolute;
+            border-radius: 50%;
+            filter: blur(60px);
+            opacity: 0.3;
+            animation: float 6s ease-in-out infinite;
+        }
     </style>
 </head>
-<body class="bg-white text-gray-800">
-    
-    <a href="https://wa.me/51944296912?text=Hola,%20me%20interesa%20conocer%20más%20sobre%20sus%20productos" target="_blank" class="whatsapp-float">
-        <i class="fab fa-whatsapp"></i>
-    </a>
 
+<body class="bg-white text-gray-800">
+
+    <a href="https://wa.me/51944296912?text=Hola,%20me%20interesa%20conocer%20más%20sobre%20sus%20productos"
+        target="_blank" rel="noopener" class="whatsapp-float" title="Contáctanos por WhatsApp">
+        <i class="fab fa-whatsapp" aria-hidden="true"></i>
+        <span class="sr-only">Contáctanos por WhatsApp</span>
+    </a>
     <header class="bg-white shadow-md fixed w-full top-0 z-50">
         <nav class="container mx-auto px-6 py-4">
             <div class="flex justify-between items-center">
-                <div class="text-2xl font-bold text-orange-500">🥛 Yogurin Bustamante</div>
-                <div class="hidden md:flex space-x-8">
-                    <a href="#inicio" class="nav-link hover:text-orange-500">Inicio</a>
-                    <a href="#tienda" class="nav-link hover:text-orange-500">Tienda</a>
-                    <a href="#servicios" class="nav-link hover:text-orange-500">Servicios</a>
-                    <a href="#nosotros" class="nav-link hover:text-orange-500">Nosotros</a>
-                    <a href="#contacto" class="nav-link hover:text-orange-500">Contacto</a>
+                <div class="text-2xl font-bold text-orange-500">
+                    <a href="index.html">🥛 Yogurin Bustamante</a>
                 </div>
-                <button class="md:hidden" id="mobile-menu-btn"><i class="fas fa-bars text-2xl"></i></button>
+                <div class="hidden md:flex space-x-8">
+                    <a href="index.html" class="nav-link hover:text-orange-500">Inicio</a>
+                    <a href="tienda.html" class="nav-link hover:text-orange-500">Tienda</a>
+                    <a href="servicios.html" class="nav-link hover:text-orange-500">Servicios</a>
+                    <a href="nosotros.html" class="nav-link hover:text-orange-500 text-orange-500">Nosotros</a>
+                    <a href="contacto.html" class="nav-link hover:text-orange-500">Contacto</a>
+                </div>
+                <button type="button" class="md:hidden" id="mobile-menu-btn" title="Abrir menú de navegación">
+                    <i class="fas fa-bars text-2xl" aria-hidden="true"></i>
+                    <span class="sr-only">Abrir menú de navegación</span>
+                </button>
             </div>
             <div id="mobile-menu" class="hidden md:hidden mt-4 pb-4">
-                <a href="#inicio" class="block py-2 hover:text-orange-500">Inicio</a>
-                <a href="#tienda" class="block py-2 hover:text-orange-500">Tienda</a>
-                <a href="#servicios" class="block py-2 hover:text-orange-500">Servicios</a>
-                <a href="#nosotros" class="block py-2 hover:text-orange-500">Nosotros</a>
-                <a href="#contacto" class="block py-2 hover:text-orange-500">Contacto</a>
+                <a href="index.html" class="block py-2 hover:text-orange-500">Inicio</a>
+                <a href="tienda.html" class="block py-2 hover:text-orange-500">Tienda</a>
+                <a href="servicios.html" class="block py-2 hover:text-orange-500">Servicios</a>
+                <a href="nosotros.html" class="block py-2 hover:text-orange-500 text-orange-500">Nosotros</a>
+                <a href="contacto.html" class="block py-2 hover:text-orange-500">Contacto</a>
             </div>
         </nav>
     </header>
 
     <section id="inicio" class="pt-24 pb-16 gradient-bg relative overflow-hidden">
         <div class="blob" style="width: 400px; height: 400px; background: #FF8C00; top: -100px; right: -100px;"></div>
-        <div class="blob" style="width: 300px; height: 300px; background: #DC143C; bottom: -50px; left: -50px; animation-delay: 2s;"></div>
+        <div class="blob"
+            style="width: 300px; height: 300px; background: #DC143C; bottom: -50px; left: -50px; animation-delay: 2s;">
+        </div>
         <div class="container mx-auto px-6 relative z-10">
             <div class="flex flex-col md:flex-row items-center justify-between">
                 <div class="md:w-1/2 text-white animate-slide-in">
-                    <h1 class="text-5xl md:text-6xl font-bold mb-6 leading-tight">Yogurt Artesanal<span class="block text-3xl mt-2">Hecho con amor y dedicación</span></h1>
-                    <p class="text-xl mb-8 text-white opacity-90">Descubre el sabor auténtico de nuestros yogures artesanales. 100% natural, directo a tu mesa.</p>
+                    <h1 class="text-5xl md:text-6xl font-bold mb-6 leading-tight">Yogurt Artesanal<span
+                            class="block text-3xl mt-2">Hecho con amor y dedicación</span></h1>
+                    <p class="text-xl mb-8 text-white opacity-90">Descubre el sabor auténtico de nuestros yogures
+                        artesanales. 100% natural, directo a tu mesa.</p>
                     <div class="flex flex-col sm:flex-row gap-4">
-                        <a href="https://wa.me/51944296912" class="bg-white text-orange-500 px-8 py-4 rounded-full font-semibold hover:bg-gray-100 transition-all transform hover:scale-105 shadow-lg flex items-center justify-center"><i class="fab fa-whatsapp mr-2 text-2xl"></i>Pide por WhatsApp</a>
-                        <a href="#tienda" class="bg-transparent border-2 border-white text-white px-8 py-4 rounded-full font-semibold hover:bg-white hover:text-orange-500 transition-all">Ver Productos</a>
+                        <a href="https://wa.me/51944296912"
+                            class="bg-white text-orange-500 px-8 py-4 rounded-full font-semibold hover:bg-gray-100 transition-all transform hover:scale-105 shadow-lg flex items-center justify-center"><i
+                                class="fab fa-whatsapp mr-2 text-2xl"></i>Pide por WhatsApp</a>
+                        <a href="#tienda"
+                            class="bg-transparent border-2 border-white text-white px-8 py-4 rounded-full font-semibold hover:bg-white hover:text-orange-500 transition-all">Ver
+                            Productos</a>
                     </div>
                 </div>
                 <div class="md:w-1/2 mt-10 md:mt-0 animate-fade-in">
-                    <img src="./img/img-hero.png" alt="Yogurt natural" class="rounded-3xl shadow-2xl transform hover:scale-105 transition-transform">
+                    <img src="./img/img-hero.png" alt="Yogurt natural"
+                        class="rounded-3xl shadow-2xl transform hover:scale-105 transition-transform">
                 </div>
             </div>
         </div>
@@ -109,7 +255,8 @@
     <section id="tienda" class="py-20 bg-white">
         <div class="container mx-auto px-6">
             <h2 class="text-4xl md:text-5xl font-bold text-center mb-4 text-gray-900">NUESTROS PRODUCTOS</h2>
-            <p class="text-center text-gray-600 mb-12 text-lg">Yogures artesanales elaborados con los mejores ingredientes</p>
+            <p class="text-center text-gray-600 mb-12 text-lg">Yogures artesanales elaborados con los mejores
+                ingredientes</p>
             <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
                 <div class="product-card hover-lift bg-white rounded-2xl shadow-lg overflow-hidden">
                     <img src="./img/yogurt-natural.png" alt="Yogurt Natural" class="w-full h-64 object-cover">
@@ -120,7 +267,8 @@
                         <p class="text-gray-600 mb-4">Clásico y cremoso, perfecto para cualquier momento.</p>
                         <div class="flex justify-between items-center">
                             <span class="text-3xl font-bold text-orange-500">S/. 10.00</span>
-                            <a href="https://wa.me/51944296912?text=Hola,%20quiero%20cotizar%20el%20Yogurt%20Natural" class="bg-orange-500 text-white px-6 py-2 rounded-full hover:bg-orange-600 transition-colors">Cotizar</a>
+                            <a href="https://wa.me/51944296912?text=Hola,%20quiero%20cotizar%20el%20Yogurt%20Natural"
+                                class="bg-orange-500 text-white px-6 py-2 rounded-full hover:bg-orange-600 transition-colors">Cotizar</a>
                         </div>
                     </div>
                 </div>
@@ -133,7 +281,8 @@
                         <p class="text-gray-600 mb-4">Delicioso sabor a fresas frescas naturales.</p>
                         <div class="flex justify-between items-center">
                             <span class="text-3xl font-bold text-orange-500">S/. 12.00</span>
-                            <a href="https://wa.me/51944296912?text=Hola,%20quiero%20cotizar%20el%20Yogurt%20con%20Fresa" class="bg-orange-500 text-white px-6 py-2 rounded-full hover:bg-orange-600 transition-colors">Cotizar</a>
+                            <a href="https://wa.me/51944296912?text=Hola,%20quiero%20cotizar%20el%20Yogurt%20con%20Fresa"
+                                class="bg-orange-500 text-white px-6 py-2 rounded-full hover:bg-orange-600 transition-colors">Cotizar</a>
                         </div>
                     </div>
                 </div>
@@ -147,11 +296,12 @@
                         <p class="text-gray-600 mb-4">Antioxidantes naturales y sabor excepcional.</p>
                         <div class="flex justify-between items-center">
                             <span class="text-3xl font-bold text-orange-500">S/. 12.00</span>
-                            <a href="https://wa.me/51944296912?text=Hola,%20quiero%20cotizar%20el%20Yogurt%20con%20Arándanos" class="bg-orange-500 text-white px-6 py-2 rounded-full hover:bg-orange-600 transition-colors">Cotizar</a>
+                            <a href="https://wa.me/51944296912?text=Hola,%20quiero%20cotizar%20el%20Yogurt%20con%20Arándanos"
+                                class="bg-orange-500 text-white px-6 py-2 rounded-full hover:bg-orange-600 transition-colors">Cotizar</a>
                         </div>
                     </div>
                 </div>
-				<div class="product-card hover-lift bg-white rounded-2xl shadow-lg overflow-hidden">
+                <div class="product-card hover-lift bg-white rounded-2xl shadow-lg overflow-hidden">
                     <img src="./img/yogurt-guanabana.png" alt="Yogurt Arándanos" class="w-full h-64 object-cover">
                     <div class="p-6">
                         <!-- <span class="bg-purple-100 text-purple-800 text-xs px-3 py-1 rounded-full"></span> -->
@@ -161,11 +311,12 @@
                         <p class="text-gray-600 mb-4">Antioxidantes naturales y sabor excepcional.</p>
                         <div class="flex justify-between items-center">
                             <span class="text-3xl font-bold text-orange-500">S/. 12.00</span>
-                            <a href="https://wa.me/51944296912?text=Hola,%20quiero%20cotizar%20el%20Yogurt%20con%20Arándanos" class="bg-orange-500 text-white px-6 py-2 rounded-full hover:bg-orange-600 transition-colors">Cotizar</a>
+                            <a href="https://wa.me/51944296912?text=Hola,%20quiero%20cotizar%20el%20Yogurt%20con%20Arándanos"
+                                class="bg-orange-500 text-white px-6 py-2 rounded-full hover:bg-orange-600 transition-colors">Cotizar</a>
                         </div>
                     </div>
                 </div>
-				<div class="product-card hover-lift bg-white rounded-2xl shadow-lg overflow-hidden">
+                <div class="product-card hover-lift bg-white rounded-2xl shadow-lg overflow-hidden">
                     <img src="./img/yogurt-platano.png" alt="Yogurt Arándanos" class="w-full h-64 object-cover">
                     <div class="p-6">
                         <!-- <span class="bg-purple-100 text-purple-800 text-xs px-3 py-1 rounded-full"></span> -->
@@ -175,11 +326,12 @@
                         <p class="text-gray-600 mb-4">Antioxidantes naturales y sabor excepcional.</p>
                         <div class="flex justify-between items-center">
                             <span class="text-3xl font-bold text-orange-500">S/. 12.00</span>
-                            <a href="https://wa.me/51944296912?text=Hola,%20quiero%20cotizar%20el%20Yogurt%20con%20Arándanos" class="bg-orange-500 text-white px-6 py-2 rounded-full hover:bg-orange-600 transition-colors">Cotizar</a>
+                            <a href="https://wa.me/51944296912?text=Hola,%20quiero%20cotizar%20el%20Yogurt%20con%20Arándanos"
+                                class="bg-orange-500 text-white px-6 py-2 rounded-full hover:bg-orange-600 transition-colors">Cotizar</a>
                         </div>
                     </div>
                 </div>
-				<div class="product-card hover-lift bg-white rounded-2xl shadow-lg overflow-hidden">
+                <div class="product-card hover-lift bg-white rounded-2xl shadow-lg overflow-hidden">
                     <img src="./img/yogurt-pina.png" alt="Yogurt Arándanos" class="w-full h-64 object-cover">
                     <div class="p-6">
                         <!-- <span class="bg-purple-100 text-purple-800 text-xs px-3 py-1 rounded-full"></span> -->
@@ -189,11 +341,12 @@
                         <p class="text-gray-600 mb-4">Antioxidantes naturales y sabor excepcional.</p>
                         <div class="flex justify-between items-center">
                             <span class="text-3xl font-bold text-orange-500">S/. 12.00</span>
-                            <a href="https://wa.me/51944296912?text=Hola,%20quiero%20cotizar%20el%20Yogurt%20con%20Arándanos" class="bg-orange-500 text-white px-6 py-2 rounded-full hover:bg-orange-600 transition-colors">Cotizar</a>
+                            <a href="https://wa.me/51944296912?text=Hola,%20quiero%20cotizar%20el%20Yogurt%20con%20Arándanos"
+                                class="bg-orange-500 text-white px-6 py-2 rounded-full hover:bg-orange-600 transition-colors">Cotizar</a>
                         </div>
                     </div>
                 </div>
-				<div class="product-card hover-lift bg-white rounded-2xl shadow-lg overflow-hidden">
+                <div class="product-card hover-lift bg-white rounded-2xl shadow-lg overflow-hidden">
                     <img src="./img/yogurt-pitahaya.png" alt="Yogurt Arándanos" class="w-full h-64 object-cover">
                     <div class="p-6">
                         <!-- <span class="bg-purple-100 text-purple-800 text-xs px-3 py-1 rounded-full"></span> -->
@@ -203,11 +356,12 @@
                         <p class="text-gray-600 mb-4">Antioxidantes naturales y sabor excepcional.</p>
                         <div class="flex justify-between items-center">
                             <span class="text-3xl font-bold text-orange-500">S/. 12.00</span>
-                            <a href="https://wa.me/51944296912?text=Hola,%20quiero%20cotizar%20el%20Yogurt%20con%20Arándanos" class="bg-orange-500 text-white px-6 py-2 rounded-full hover:bg-orange-600 transition-colors">Cotizar</a>
+                            <a href="https://wa.me/51944296912?text=Hola,%20quiero%20cotizar%20el%20Yogurt%20con%20Arándanos"
+                                class="bg-orange-500 text-white px-6 py-2 rounded-full hover:bg-orange-600 transition-colors">Cotizar</a>
                         </div>
                     </div>
                 </div>
-				
+
             </div>
         </div>
     </section>
@@ -219,25 +373,30 @@
                 <div class="bg-white p-8 rounded-2xl shadow-lg hover-lift">
                     <div class="text-5xl mb-4">🏪</div>
                     <h3 class="text-2xl font-bold mb-3">Venta al Por Mayor</h3>
-                    <p class="text-gray-600 mb-4">Abastecemos a bodegas, restaurantes y negocios con precios especiales para volumen.</p>
-                    <a href="#contacto" class="text-orange-500 font-semibold hover:text-orange-600">Solicitar cotización →</a>
+                    <p class="text-gray-600 mb-4">Abastecemos a bodegas, restaurantes y negocios con precios especiales
+                        para volumen.</p>
+                    <a href="#contacto" class="text-orange-500 font-semibold hover:text-orange-600">Solicitar cotización
+                        →</a>
                 </div>
                 <div class="bg-white p-8 rounded-2xl shadow-lg hover-lift">
                     <div class="text-5xl mb-4">🚚</div>
                     <h3 class="text-2xl font-bold mb-3">Distribución</h3>
-                    <p class="text-gray-600 mb-4">Entrega a domicilio en Lima y provincias. Servicio rápido y confiable.</p>
+                    <p class="text-gray-600 mb-4">Entrega a domicilio en Lima y provincias. Servicio rápido y confiable.
+                    </p>
                     <a href="#contacto" class="text-orange-500 font-semibold hover:text-orange-600">Conocer más →</a>
                 </div>
                 <div class="bg-white p-8 rounded-2xl shadow-lg hover-lift">
                     <div class="text-5xl mb-4">🎨</div>
                     <h3 class="text-2xl font-bold mb-3">Productos Personalizados</h3>
-                    <p class="text-gray-600 mb-4">Crea tu yogurt ideal con tus sabores favoritos y presentación exclusiva.</p>
+                    <p class="text-gray-600 mb-4">Crea tu yogurt ideal con tus sabores favoritos y presentación
+                        exclusiva.</p>
                     <a href="#contacto" class="text-orange-500 font-semibold hover:text-orange-600">Personalizar →</a>
                 </div>
                 <div class="bg-white p-8 rounded-2xl shadow-lg hover-lift">
                     <div class="text-5xl mb-4">📅</div>
                     <h3 class="text-2xl font-bold mb-3">Suscripción Semanal</h3>
-                    <p class="text-gray-600 mb-4">Recibe tus yogures favoritos cada semana. Ahorra hasta 15% con nuestra suscripción.</p>
+                    <p class="text-gray-600 mb-4">Recibe tus yogures favoritos cada semana. Ahorra hasta 15% con nuestra
+                        suscripción.</p>
                     <a href="#contacto" class="text-orange-500 font-semibold hover:text-orange-600">Suscribirme →</a>
                 </div>
             </div>
@@ -252,8 +411,12 @@
                 </div>
                 <div class="md:w-1/2">
                     <h2 class="text-4xl md:text-5xl font-bold mb-6 text-gray-900">Sobre Nosotros</h2>
-                    <p class="text-gray-600 text-lg mb-6 leading-relaxed"><strong>Yogurin Bustamante</strong> nace del amor por los productos lácteos de calidad y el compromiso de llevar salud a cada hogar peruano.</p>
-                    <p class="text-gray-600 text-lg mb-6 leading-relaxed">Elaboramos nuestros yogures de forma artesanal, utilizando únicamente ingredientes naturales y siguiendo procesos que respetan las propiedades nutricionales de la leche.</p>
+                    <p class="text-gray-600 text-lg mb-6 leading-relaxed"><strong>Yogurin Bustamante</strong> nace del
+                        amor por los productos lácteos de calidad y el compromiso de llevar salud a cada hogar peruano.
+                    </p>
+                    <p class="text-gray-600 text-lg mb-6 leading-relaxed">Elaboramos nuestros yogures de forma
+                        artesanal, utilizando únicamente ingredientes naturales y siguiendo procesos que respetan las
+                        propiedades nutricionales de la leche.</p>
                     <div class="grid grid-cols-2 gap-6">
                         <div>
                             <div class="text-4xl font-bold text-orange-500">100%</div>
@@ -271,23 +434,27 @@
 
     <section class="py-20 bg-gray-50">
         <div class="container mx-auto px-6">
-            <h2 class="text-4xl md:text-5xl font-bold text-center mb-12 text-gray-900">Lo que dicen nuestros clientes</h2>
+            <h2 class="text-4xl md:text-5xl font-bold text-center mb-12 text-gray-900">Lo que dicen nuestros clientes
+            </h2>
             <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
                 <div class="bg-white p-8 rounded-2xl shadow-lg">
                     <div class="text-yellow-400 text-2xl mb-4">⭐⭐⭐⭐⭐</div>
-                    <p class="text-gray-600 mb-4 italic">"El mejor yogurt que he probado en Lima. Natural, cremoso y delicioso. Mi familia lo adora."</p>
+                    <p class="text-gray-600 mb-4 italic">"El mejor yogurt que he probado en Lima. Natural, cremoso y
+                        delicioso. Mi familia lo adora."</p>
                     <div class="font-semibold">- María González</div>
                     <div class="text-sm text-gray-500">San Isidro</div>
                 </div>
                 <div class="bg-white p-8 rounded-2xl shadow-lg">
                     <div class="text-yellow-400 text-2xl mb-4">⭐⭐⭐⭐⭐</div>
-                    <p class="text-gray-600 mb-4 italic">"Excelente calidad y precio. La atención por WhatsApp es rápida y muy amable. 100% recomendado."</p>
+                    <p class="text-gray-600 mb-4 italic">"Excelente calidad y precio. La atención por WhatsApp es rápida
+                        y muy amable. 100% recomendado."</p>
                     <div class="font-semibold">- Carlos Mendoza</div>
                     <div class="text-sm text-gray-500">Miraflores</div>
                 </div>
                 <div class="bg-white p-8 rounded-2xl shadow-lg">
                     <div class="text-yellow-400 text-2xl mb-4">⭐⭐⭐⭐⭐</div>
-                    <p class="text-gray-600 mb-4 italic">"Mis hijos están felices. El yogurt de fresa es su favorito. Gracias por un producto tan saludable."</p>
+                    <p class="text-gray-600 mb-4 italic">"Mis hijos están felices. El yogurt de fresa es su favorito.
+                        Gracias por un producto tan saludable."</p>
                     <div class="font-semibold">- Ana Rodríguez</div>
                     <div class="text-sm text-gray-500">Surco</div>
                 </div>
@@ -304,26 +471,37 @@
                     <form class="space-y-6" id="contact-form">
                         <div>
                             <label class="block text-gray-700 font-semibold mb-2">Nombre completo</label>
-                            <input type="text" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:border-orange-500" required>
+                            <input type="text"
+                                class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:border-orange-500"
+                                placeholder="Ingresa tu nombre completo" required>
                         </div>
                         <div>
                             <label class="block text-gray-700 font-semibold mb-2">Email</label>
-                            <input type="email" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:border-orange-500" required>
+                            <input type="email"
+                                class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:border-orange-500"
+                                placeholder="Ingresa tu correo" required>
                         </div>
                         <div>
                             <label class="block text-gray-700 font-semibold mb-2">Teléfono</label>
-                            <input type="tel" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:border-orange-500" required>
+                            <input type="tel"
+                                class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:border-orange-500"
+                                placeholder="Ingresa tu teléfono" required>
                         </div>
                         <div>
                             <label class="block text-gray-700 font-semibold mb-2">Mensaje</label>
-                            <textarea rows="4" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:border-orange-500" required></textarea>
+                            <textarea rows="4"
+                                class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:border-orange-500"
+                                placeholder="Ingresa un mensaje" required></textarea>
                         </div>
-                        <button type="submit" class="w-full bg-orange-500 text-white py-4 rounded-lg font-semibold hover:bg-orange-600 transition-colors transform hover:scale-105">Enviar Mensaje</button>
+                        <button type="submit"
+                            class="w-full bg-orange-500 text-white py-4 rounded-lg font-semibold hover:bg-orange-600 transition-colors transform hover:scale-105">Enviar
+                            Mensaje</button>
                     </form>
                 </div>
                 <div class="space-y-8">
                     <div class="flex items-start space-x-4">
-                        <div class="bg-orange-100 p-4 rounded-full"><i class="fas fa-phone text-orange-500 text-2xl"></i></div>
+                        <div class="bg-orange-100 p-4 rounded-full"><i
+                                class="fas fa-phone text-orange-500 text-2xl"></i></div>
                         <div>
                             <h3 class="font-bold text-xl mb-2">Teléfono</h3>
                             <p class="text-gray-600">+51 944 296 912</p>
@@ -331,7 +509,8 @@
                         </div>
                     </div>
                     <div class="flex items-start space-x-4">
-                        <div class="bg-orange-100 p-4 rounded-full"><i class="fas fa-envelope text-orange-500 text-2xl"></i></div>
+                        <div class="bg-orange-100 p-4 rounded-full"><i
+                                class="fas fa-envelope text-orange-500 text-2xl"></i></div>
                         <div>
                             <h3 class="font-bold text-xl mb-2">Email</h3>
                             <p class="text-gray-600">ventas@yogurinbustamante.com</p>
@@ -339,7 +518,8 @@
                         </div>
                     </div>
                     <div class="flex items-start space-x-4">
-                        <div class="bg-orange-100 p-4 rounded-full"><i class="fas fa-map-marker-alt text-orange-500 text-2xl"></i></div>
+                        <div class="bg-orange-100 p-4 rounded-full"><i
+                                class="fas fa-map-marker-alt text-orange-500 text-2xl"></i></div>
                         <div>
                             <h3 class="font-bold text-xl mb-2">Ubicación</h3>
                             <p class="text-gray-600">Lima, Perú</p>
@@ -347,20 +527,33 @@
                         </div>
                     </div>
                     <div class="flex items-start space-x-4">
-                        <div class="bg-orange-100 p-4 rounded-full"><i class="fab fa-whatsapp text-orange-500 text-2xl"></i></div>
+                        <div class="bg-orange-100 p-4 rounded-full"><i
+                                class="fab fa-whatsapp text-orange-500 text-2xl"></i></div>
                         <div>
                             <h3 class="font-bold text-xl mb-2">WhatsApp</h3>
-                            <a href="https://wa.me/51944296912" class="text-orange-500 font-semibold hover:text-orange-600">Chatea con nosotros →</a>
+                            <a href="https://wa.me/51944296912"
+                                class="text-orange-500 font-semibold hover:text-orange-600">Chatea con nosotros →</a>
                         </div>
                     </div>
                     <div class="pt-6">
                         <h3 class="font-bold text-xl mb-4">Síguenos</h3>
                         <div class="flex space-x-4">
-                            <a href="#" class="bg-blue-500 text-white w-12 h-12 rounded-full flex items-center justify-center hover:bg-blue-600 transition-colors"><i class="fab fa-facebook-f"></i></a>
-                            <a href="#" class="bg-gradient-to-r from-purple-500 to-pink-500 text-white w-12 h-12 rounded-full flex items-center justify-center hover:opacity-80 transition-opacity"><i class="fab fa-instagram"></i></a>
-                            <a href="#" class="bg-red-500 text-white w-12 h-12 rounded-full flex items-center justify-center hover:bg-red-600 transition-colors"><i class="fab fa-youtube"></i></a>
-                            <a href="#" class="bg-blue-400 text-white w-12 h-12 rounded-full flex items-center justify-center hover:bg-blue-500 transition-colors"><i class="fab fa-twitter"></i></a>
-                        </div>
+                        <a href="#" title="Facebook"
+                            class="bg-blue-500 text-white w-10 h-10 rounded-full flex items-center justify-center hover:bg-blue-600 transition-colors">
+                            <i class="fab fa-facebook-f" aria-hidden="true"></i>
+                            <span class="sr-only">Facebook</span>
+                        </a>
+                        <a href="#" title="Instagram"
+                            class="bg-gradient-to-r from-purple-500 to-pink-500 text-white w-10 h-10 rounded-full flex items-center justify-center hover:opacity-80 transition-opacity">
+                            <i class="fab fa-instagram" aria-hidden="true"></i>
+                            <span class="sr-only">Instagram</span>
+                        </a>
+                        <a href="#" title="Twitter"
+                            class="bg-blue-400 text-white w-10 h-10 rounded-full flex items-center justify-center hover:bg-blue-500 transition-colors">
+                            <i class="fab fa-twitter" aria-hidden="true"></i>
+                            <span class="sr-only">Twitter</span>
+                        </a>
+                    </div>
                     </div>
                 </div>
             </div>
@@ -370,8 +563,11 @@
     <section class="py-20 gradient-bg">
         <div class="container mx-auto px-6 text-center">
             <h2 class="text-4xl md:text-5xl font-bold text-white mb-6">¿Listo para probar el mejor yogurt?</h2>
-            <p class="text-xl text-white mb-8 opacity-90">Haz tu pedido ahora y recibe un descuento especial en tu primera compra</p>
-            <a href="https://wa.me/51944296912?text=Hola,%20quiero%20hacer%20mi%20primer%20pedido" class="inline-block bg-white text-orange-500 px-10 py-4 rounded-full font-bold text-lg hover:bg-gray-100 transition-all transform hover:scale-105 shadow-2xl"><i class="fab fa-whatsapp mr-2"></i>Pedir Ahora</a>
+            <p class="text-xl text-white mb-8 opacity-90">Haz tu pedido ahora y recibe un descuento especial en tu
+                primera compra</p>
+            <a href="https://wa.me/51944296912?text=Hola,%20quiero%20hacer%20mi%20primer%20pedido"
+                class="inline-block bg-white text-orange-500 px-10 py-4 rounded-full font-bold text-lg hover:bg-gray-100 transition-all transform hover:scale-105 shadow-2xl"><i
+                    class="fab fa-whatsapp mr-2"></i>Pedir Ahora</a>
         </div>
     </section>
 
@@ -385,33 +581,46 @@
                 <div>
                     <h4 class="font-bold text-lg mb-4">Enlaces Rápidos</h4>
                     <ul class="space-y-2">
-                        <li><a href="#inicio" class="text-gray-400 hover:text-orange-500 transition-colors">Inicio</a></li>
-                        <li><a href="#tienda" class="text-gray-400 hover:text-orange-500 transition-colors">Tienda</a></li>
-                        <li><a href="#servicios" class="text-gray-400 hover:text-orange-500 transition-colors">Servicios</a></li>
-                        <li><a href="#nosotros" class="text-gray-400 hover:text-orange-500 transition-colors">Nosotros</a></li>
-                        <li><a href="#contacto" class="text-gray-400 hover:text-orange-500 transition-colors">Contacto</a></li>
+                        <li><a href="#inicio" class="text-gray-400 hover:text-orange-500 transition-colors">Inicio</a>
+                        </li>
+                        <li><a href="#tienda" class="text-gray-400 hover:text-orange-500 transition-colors">Tienda</a>
+                        </li>
+                        <li><a href="#servicios"
+                                class="text-gray-400 hover:text-orange-500 transition-colors">Servicios</a></li>
+                        <li><a href="#nosotros"
+                                class="text-gray-400 hover:text-orange-500 transition-colors">Nosotros</a></li>
+                        <li><a href="#contacto"
+                                class="text-gray-400 hover:text-orange-500 transition-colors">Contacto</a></li>
                     </ul>
                 </div>
                 <div>
                     <h4 class="font-bold text-lg mb-4">Productos</h4>
                     <ul class="space-y-2">
-                        <li><a href="#" class="text-gray-400 hover:text-orange-500 transition-colors">Yogurt Natural</a></li>
-                        <li><a href="#" class="text-gray-400 hover:text-orange-500 transition-colors">Yogurt con Frutas</a></li>
-                        <li><a href="#" class="text-gray-400 hover:text-orange-500 transition-colors">Yogurt Griego</a></li>
-                        <li><a href="#" class="text-gray-400 hover:text-orange-500 transition-colors">Packs Familiares</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-orange-500 transition-colors">Yogurt Natural</a>
+                        </li>
+                        <li><a href="#" class="text-gray-400 hover:text-orange-500 transition-colors">Yogurt con
+                                Frutas</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-orange-500 transition-colors">Yogurt Griego</a>
+                        </li>
+                        <li><a href="#" class="text-gray-400 hover:text-orange-500 transition-colors">Packs
+                                Familiares</a></li>
                     </ul>
                 </div>
                 <div>
                     <h4 class="font-bold text-lg mb-4">Newsletter</h4>
                     <p class="text-gray-400 mb-4">Recibe ofertas exclusivas y novedades</p>
                     <form class="flex">
-                        <input type="email" placeholder="Tu email" class="px-4 py-2 rounded-l-lg bg-gray-800 text-white border-none focus:outline-none flex-1">
-                        <button type="submit" class="bg-orange-500 px-4 py-2 rounded-r-lg hover:bg-orange-600 transition-colors"><i class="fas fa-paper-plane"></i></button>
+                        <input type="email" placeholder="Tu email"
+                            class="px-4 py-2 rounded-l-lg bg-gray-800 text-white border-none focus:outline-none flex-1">
+                        <button title="enviar" type="submit"
+                            class="bg-orange-500 px-4 py-2 rounded-r-lg hover:bg-orange-600 transition-colors"><i
+                                class="fas fa-paper-plane"></i></button>
                     </form>
                 </div>
             </div>
             <div class="border-t border-gray-800 mt-12 pt-8 flex flex-col md:flex-row justify-between items-center">
-                <p class="text-gray-400 text-sm mb-4 md:mb-0">© 2025 Yogurin Bustamante. Todos los derechos reservados.</p>
+                <p class="text-gray-400 text-sm mb-4 md:mb-0">© 2025 Yogurin Bustamante. Todos los derechos reservados.
+                </p>
                 <div class="flex space-x-6 text-sm">
                     <a href="#" class="text-gray-400 hover:text-orange-500 transition-colors">Términos y Condiciones</a>
                     <a href="#" class="text-gray-400 hover:text-orange-500 transition-colors">Política de Privacidad</a>
@@ -465,4 +674,5 @@
         });
     </script>
 </body>
+
 </html>

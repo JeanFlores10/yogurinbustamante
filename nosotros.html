@@ -1,0 +1,435 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="Conoce la historia de Yogurin Bustamante - Yogurt artesanal peruano hecho con pasión">
+    <meta name="keywords" content="sobre nosotros, historia yogurin, yogurt artesanal, empresa peruana">
+    <title>Sobre Nosotros | Yogurin Bustamante</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap');
+
+        * {
+            font-family: 'Poppins', sans-serif;
+        }
+
+        .gradient-bg {
+            background: linear-gradient(135deg, #87CEEB 0%, #FF8C00 100%);
+        }
+
+        .hover-lift {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .hover-lift:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(255, 140, 0, 0.3);
+        }
+
+        .whatsapp-float {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            background: #25D366;
+            color: white;
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 30px;
+            box-shadow: 0 4px 20px rgba(37, 211, 102, 0.5);
+            z-index: 1000;
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+
+            0%,
+            100% {
+                transform: scale(1);
+            }
+
+            50% {
+                transform: scale(1.1);
+            }
+        }
+
+        .nav-link {
+            position: relative;
+            transition: color 0.3s;
+        }
+
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: #FF8C00;
+            transition: width 0.3s;
+        }
+
+        .nav-link:hover::after {
+            width: 100%;
+        }
+    </style>
+</head>
+
+<body class="bg-gray-50">
+
+
+    <a href="https://wa.me/51944296912?text=Hola,%20me%20interesa%20conocer%20más%20sobre%20sus%20productos"
+        target="_blank" rel="noopener" class="whatsapp-float" title="Contáctanos por WhatsApp">
+        <i class="fab fa-whatsapp" aria-hidden="true"></i>
+        <span class="sr-only">Contáctanos por WhatsApp</span>
+    </a>
+    <header class="bg-white shadow-md fixed w-full top-0 z-50">
+        <nav class="container mx-auto px-6 py-4">
+            <div class="flex justify-between items-center">
+                <div class="text-2xl font-bold text-orange-500">
+                    <a href="index.html">🥛 Yogurin Bustamante</a>
+                </div>
+                <div class="hidden md:flex space-x-8">
+                    <a href="index.html" class="nav-link hover:text-orange-500">Inicio</a>
+                    <a href="tienda.html" class="nav-link hover:text-orange-500">Tienda</a>
+                    <a href="servicios.html" class="nav-link hover:text-orange-500">Servicios</a>
+                    <a href="nosotros.html" class="nav-link hover:text-orange-500 text-orange-500">Nosotros</a>
+                    <a href="contacto.html" class="nav-link hover:text-orange-500">Contacto</a>
+                </div>
+                <button type="button" class="md:hidden" id="mobile-menu-btn" title="Abrir menú de navegación">
+                    <i class="fas fa-bars text-2xl" aria-hidden="true"></i>
+                    <span class="sr-only">Abrir menú de navegación</span>
+                </button>
+            </div>
+            <div id="mobile-menu" class="hidden md:hidden mt-4 pb-4">
+                <a href="index.html" class="block py-2 hover:text-orange-500">Inicio</a>
+                <a href="tienda.html" class="block py-2 hover:text-orange-500">Tienda</a>
+                <a href="servicios.html" class="block py-2 hover:text-orange-500">Servicios</a>
+                <a href="nosotros.html" class="block py-2 hover:text-orange-500 text-orange-500">Nosotros</a>
+                <a href="contacto.html" class="block py-2 hover:text-orange-500">Contacto</a>
+            </div>
+        </nav>
+    </header>
+
+    <section class="pt-32 pb-12 gradient-bg">
+        <div class="container mx-auto px-6 text-center">
+            <h1 class="text-5xl md:text-6xl font-bold text-white mb-4">Nuestra Historia</h1>
+            <p class="text-xl text-white opacity-90">Pasión por el yogurt artesanal desde 2020</p>
+        </div>
+    </section>
+
+    <section class="py-20 bg-white">
+        <div class="container mx-auto px-6">
+            <div class="flex flex-col md:flex-row items-center gap-12">
+                <div class="md:w-1/2">
+                    <img src="./img/sobre-nosotros.png" alt="Sobre Yogurin Bustamante" class="rounded-3xl shadow-2xl">
+                </div>
+                <div class="md:w-1/2">
+                    <h2 class="text-4xl md:text-5xl font-bold mb-6 text-gray-900">¿Quiénes Somos?</h2>
+                    <p class="text-gray-600 text-lg mb-6 leading-relaxed">
+                        <strong>Yogurin Bustamante</strong> nace del sueño de una familia peruana apasionada por los
+                        productos lácteos de calidad. Desde nuestros inicios en Sayán, Lima, hemos trabajado
+                        incansablemente para llevar salud y sabor a cada hogar del Perú.
+                    </p>
+                    <p class="text-gray-600 text-lg mb-6 leading-relaxed">
+                        Elaboramos nuestros yogures de forma artesanal, utilizando únicamente ingredientes naturales de
+                        la más alta calidad. Cada botella que sale de nuestra planta es el resultado de un proceso
+                        cuidadoso que respeta las propiedades nutricionales de la leche y los sabores auténticos de las
+                        frutas peruanas.
+                    </p>
+                    <p class="text-gray-600 text-lg mb-8 leading-relaxed">
+                        Nuestro compromiso es simple pero poderoso: ofrecer yogurt 100% natural, sin conservantes ni
+                        colorantes artificiales, que nutra y deleite a toda la familia.
+                    </p>
+                    <div class="grid grid-cols-3 gap-6">
+                        <div class="text-center">
+                            <div class="text-4xl font-bold text-orange-500 mb-2">100%</div>
+                            <p class="text-gray-600 text-sm">Natural</p>
+                        </div>
+                        <div class="text-center">
+                            <div class="text-4xl font-bold text-orange-500 mb-2">5+</div>
+                            <p class="text-gray-600 text-sm">Años</p>
+                        </div>
+                        <div class="text-center">
+                            <div class="text-4xl font-bold text-orange-500 mb-2">7</div>
+                            <p class="text-gray-600 text-sm">Sabores</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-20 bg-gray-50">
+        <div class="container mx-auto px-6">
+            <h2 class="text-4xl md:text-5xl font-bold text-center mb-12 text-gray-900">Nuestros Valores</h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+
+                <div class="bg-white p-10 rounded-3xl shadow-lg hover-lift text-center">
+                    <div class="text-6xl mb-6">❤️</div>
+                    <h3 class="text-2xl font-bold mb-4 text-gray-900">Calidad</h3>
+                    <p class="text-gray-600 leading-relaxed">
+                        Seleccionamos los mejores ingredientes y seguimos estrictos controles de calidad en cada etapa
+                        de producción para garantizar un producto excepcional.
+                    </p>
+                </div>
+
+                <div class="bg-white p-10 rounded-3xl shadow-lg hover-lift text-center">
+                    <div class="text-6xl mb-6">🌿</div>
+                    <h3 class="text-2xl font-bold mb-4 text-gray-900">Naturalidad</h3>
+                    <p class="text-gray-600 leading-relaxed">
+                        Creemos en lo natural. Por eso, nuestros yogures no contienen conservantes, colorantes ni
+                        saborizantes artificiales. Solo ingredientes reales.
+                    </p>
+                </div>
+
+                <div class="bg-white p-10 rounded-3xl shadow-lg hover-lift text-center">
+                    <div class="text-6xl mb-6">🤝</div>
+                    <h3 class="text-2xl font-bold mb-4 text-gray-900">Compromiso</h3>
+                    <p class="text-gray-600 leading-relaxed">
+                        Nos comprometemos con la salud de nuestros clientes, el bienestar de nuestros colaboradores y el
+                        desarrollo de nuestra comunidad.
+                    </p>
+                </div>
+
+                <div class="bg-white p-10 rounded-3xl shadow-lg hover-lift text-center">
+                    <div class="text-6xl mb-6">🇵🇪</div>
+                    <h3 class="text-2xl font-bold mb-4 text-gray-900">Peruanidad</h3>
+                    <p class="text-gray-600 leading-relaxed">
+                        Orgullosamente peruanos, trabajamos con proveedores locales y utilizamos frutas de nuestra
+                        tierra para crear sabores únicos.
+                    </p>
+                </div>
+
+                <div class="bg-white p-10 rounded-3xl shadow-lg hover-lift text-center">
+                    <div class="text-6xl mb-6">💡</div>
+                    <h3 class="text-2xl font-bold mb-4 text-gray-900">Innovación</h3>
+                    <p class="text-gray-600 leading-relaxed">
+                        Constantemente buscamos nuevas formas de mejorar nuestros procesos y desarrollar productos que
+                        superen las expectativas de nuestros clientes.
+                    </p>
+                </div>
+
+                <div class="bg-white p-10 rounded-3xl shadow-lg hover-lift text-center">
+                    <div class="text-6xl mb-6">👨‍👩‍👧‍👦</div>
+                    <h3 class="text-2xl font-bold mb-4 text-gray-900">Familia</h3>
+                    <p class="text-gray-600 leading-relaxed">
+                        Somos una empresa familiar que trata a cada cliente como parte de nuestra familia extendida,
+                        brindando calidez y cercanía en cada interacción.
+                    </p>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <section class="py-20 bg-white">
+        <div class="container mx-auto px-6">
+            <h2 class="text-4xl md:text-5xl font-bold text-center mb-12 text-gray-900">Nuestro Proceso</h2>
+            <div class="max-w-5xl mx-auto">
+                <div class="relative">
+                    <div class="absolute left-1/2 transform -translate-x-1/2 h-full w-1 bg-orange-300 hidden md:block">
+                    </div>
+
+                    <div class="mb-12 flex items-center">
+                        <div class="w-full md:w-1/2 md:pr-12 text-right">
+                            <div class="bg-gradient-to-br from-orange-50 to-white p-8 rounded-2xl shadow-lg">
+                                <h3 class="text-2xl font-bold mb-3 text-orange-500">1. Selección</h3>
+                                <p class="text-gray-600">Elegimos cuidadosamente la leche fresca de proveedores
+                                    confiables y las mejores frutas de temporada.</p>
+                            </div>
+                        </div>
+                        <div
+                            class="hidden md:flex w-16 h-16 bg-orange-500 rounded-full items-center justify-center text-white font-bold text-xl z-10 flex-shrink-0">
+                            <i class="fas fa-check"></i>
+                        </div>
+                        <div class="w-1/2"></div>
+                    </div>
+
+                    <div class="mb-12 flex items-center">
+                        <div class="w-1/2 hidden md:block"></div>
+                        <div
+                            class="hidden md:flex w-16 h-16 bg-orange-500 rounded-full items-center justify-center text-white font-bold text-xl z-10 flex-shrink-0">
+                            <i class="fas fa-flask"></i>
+                        </div>
+                        <div class="w-full md:w-1/2 md:pl-12">
+                            <div class="bg-gradient-to-br from-blue-50 to-white p-8 rounded-2xl shadow-lg">
+                                <h3 class="text-2xl font-bold mb-3 text-orange-500">2. Fermentación</h3>
+                                <p class="text-gray-600">Utilizamos cultivos probióticos de alta calidad para fermentar
+                                    la leche, obteniendo la textura y sabor perfectos.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="mb-12 flex items-center">
+                        <div class="w-full md:w-1/2 md:pr-12 text-right">
+                            <div class="bg-gradient-to-br from-purple-50 to-white p-8 rounded-2xl shadow-lg">
+                                <h3 class="text-2xl font-bold mb-3 text-orange-500">3. Preparación</h3>
+                                <p class="text-gray-600">Mezclamos el yogurt base con pulpas de frutas naturales, sin
+                                    azúcares ni aditivos artificiales.</p>
+                            </div>
+                        </div>
+                        <div
+                            class="hidden md:flex w-16 h-16 bg-orange-500 rounded-full items-center justify-center text-white font-bold text-xl z-10 flex-shrink-0">
+                            <i class="fas fa-blender"></i>
+                        </div>
+                        <div class="w-1/2"></div>
+                    </div>
+
+                    <div class="flex items-center">
+                        <div class="w-1/2 hidden md:block"></div>
+                        <div
+                            class="hidden md:flex w-16 h-16 bg-orange-500 rounded-full items-center justify-center text-white font-bold text-xl z-10 flex-shrink-0">
+                            <i class="fas fa-box"></i>
+                        </div>
+                        <div class="w-full md:w-1/2 md:pl-12">
+                            <div class="bg-gradient-to-br from-green-50 to-white p-8 rounded-2xl shadow-lg">
+                                <h3 class="text-2xl font-bold mb-3 text-orange-500">4. Envasado</h3>
+                                <p class="text-gray-600">Envasamos en recipientes seguros y refrigeramos inmediatamente
+                                    para mantener la frescura y calidad.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-20 bg-gray-50">
+        <div class="container mx-auto px-6">
+            <h2 class="text-4xl md:text-5xl font-bold text-center mb-12 text-gray-900">Lo Que Nos Hace Diferentes</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl mx-auto">
+
+                <div class="flex items-start space-x-4 bg-white p-6 rounded-2xl shadow-lg">
+                    <div class="flex-shrink-0 w-12 h-12 bg-orange-100 rounded-full flex items-center justify-center">
+                        <i class="fas fa-leaf text-orange-500 text-xl"></i>
+                    </div>
+                    <div>
+                        <h3 class="font-bold text-xl mb-2">Sin Conservantes</h3>
+                        <p class="text-gray-600">Nuestros yogures son 100% libres de conservantes artificiales, lo que
+                            garantiza un producto natural y saludable.</p>
+                    </div>
+                </div>
+
+                <div class="flex items-start space-x-4 bg-white p-6 rounded-2xl shadow-lg">
+                    <div class="flex-shrink-0 w-12 h-12 bg-orange-100 rounded-full flex items-center justify-center">
+                        <i class="fas fa-heart text-orange-500 text-xl"></i>
+                    </div>
+                    <div>
+                        <h3 class="font-bold text-xl mb-2">Hecho con Amor</h3>
+                        <p class="text-gray-600">Cada botella es elaborada con dedicación y cariño, como si fuera para
+                            nuestra propia familia.</p>
+                    </div>
+                </div>
+
+                <div class="flex items-start space-x-4 bg-white p-6 rounded-2xl shadow-lg">
+                    <div class="flex-shrink-0 w-12 h-12 bg-orange-100 rounded-full flex items-center justify-center">
+                        <i class="fas fa-truck text-orange-500 text-xl"></i>
+                    </div>
+                    <div>
+                        <h3 class="font-bold text-xl mb-2">Entrega Fresca</h3>
+                        <p class="text-gray-600">Nuestro sistema de distribución refrigerada garantiza que recibas el
+                            yogurt en perfectas condiciones.</p>
+                    </div>
+                </div>
+
+                <div class="flex items-start space-x-4 bg-white p-6 rounded-2xl shadow-lg">
+                    <div class="flex-shrink-0 w-12 h-12 bg-orange-100 rounded-full flex items-center justify-center">
+                        <i class="fas fa-users text-orange-500 text-xl"></i>
+                    </div>
+                    <div>
+                        <h3 class="font-bold text-xl mb-2">Atención Personalizada</h3>
+                        <p class="text-gray-600">Estamos siempre disponibles para atender tus consultas y brindarte la
+                            mejor experiencia de compra.</p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <section class="py-20 gradient-bg">
+        <div class="container mx-auto px-6 text-center">
+            <h2 class="text-4xl md:text-5xl font-bold text-white mb-6">¿Quieres ser parte de nuestra historia?</h2>
+            <p class="text-xl text-white mb-8 opacity-90">Únete a miles de familias que ya disfrutan de nuestros yogures
+                artesanales</p>
+            <a href="tienda.html"
+                class="inline-block bg-white text-orange-500 px-10 py-4 rounded-full font-bold text-lg hover:bg-gray-100 transition-all transform hover:scale-105 shadow-2xl">
+                Ver Productos
+            </a>
+        </div>
+    </section>
+
+    <footer class="bg-gray-900 text-white py-12">
+        <div class="container mx-auto px-6">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <div>
+                    <h3 class="text-2xl font-bold mb-4 text-orange-500">🥛 Yogurin Bustamante</h3>
+                    <p class="text-gray-400">Yogurt natural peruano de la más alta calidad para toda la familia.</p>
+                </div>
+                <div>
+                    <h4 class="font-bold text-lg mb-4">Enlaces Rápidos</h4>
+                    <ul class="space-y-2">
+                        <li><a href="index.html"
+                                class="text-gray-400 hover:text-orange-500 transition-colors">Inicio</a></li>
+                        <li><a href="tienda.html"
+                                class="text-gray-400 hover:text-orange-500 transition-colors">Tienda</a></li>
+                        <li><a href="servicios.html"
+                                class="text-gray-400 hover:text-orange-500 transition-colors">Servicios</a></li>
+                        <li><a href="nosotros.html"
+                                class="text-gray-400 hover:text-orange-500 transition-colors">Nosotros</a></li>
+                        <li><a href="contacto.html"
+                                class="text-gray-400 hover:text-orange-500 transition-colors">Contacto</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-bold text-lg mb-4">Contacto</h4>
+                    <ul class="space-y-2 text-gray-400">
+                        <li><i class="fas fa-phone mr-2"></i>+51 944 296 912</li>
+                        <li><i class="fas fa-envelope mr-2"></i>ventas@yogurinbustamante.com</li>
+                        <li><i class="fas fa-map-marker-alt mr-2"></i>Lima, Perú</li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-bold text-lg mb-4">Síguenos</h4>
+                    <div class="flex space-x-4">
+                        <a href="#" title="Facebook"
+                            class="bg-blue-500 text-white w-10 h-10 rounded-full flex items-center justify-center hover:bg-blue-600 transition-colors">
+                            <i class="fab fa-facebook-f" aria-hidden="true"></i>
+                            <span class="sr-only">Facebook</span>
+                        </a>
+                        <a href="#" title="Instagram"
+                            class="bg-gradient-to-r from-purple-500 to-pink-500 text-white w-10 h-10 rounded-full flex items-center justify-center hover:opacity-80 transition-opacity">
+                            <i class="fab fa-instagram" aria-hidden="true"></i>
+                            <span class="sr-only">Instagram</span>
+                        </a>
+                        <a href="#" title="Twitter"
+                            class="bg-blue-400 text-white w-10 h-10 rounded-full flex items-center justify-center hover:bg-blue-500 transition-colors">
+                            <i class="fab fa-twitter" aria-hidden="true"></i>
+                            <span class="sr-only">Twitter</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="border-t border-gray-800 mt-8 pt-8 text-center">
+                <p class="text-gray-400 text-sm">© 2025 Yogurin Bustamante. Todos los derechos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        mobileMenuBtn.addEventListener('click', () => { mobileMenu.classList.toggle('hidden'); });
+    </script>
+</body>
+
+</html>

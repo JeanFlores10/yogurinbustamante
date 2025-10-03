@@ -1,0 +1,465 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="Contáctanos - Yogurin Bustamante. Estamos listos para atender tus consultas sobre nuestros yogures artesanales">
+    <meta name="keywords" content="contacto yogurin, pedir yogurt, consultas, whatsapp yogurt">
+    <title>Contacto | Yogurin Bustamante</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap');
+
+        * {
+            font-family: 'Poppins', sans-serif;
+        }
+
+        .gradient-bg {
+            background: linear-gradient(135deg, #87CEEB 0%, #FF8C00 100%);
+        }
+
+        .hover-lift {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .hover-lift:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(255, 140, 0, 0.3);
+        }
+
+        .whatsapp-float {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            background: #25D366;
+            color: white;
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 30px;
+            box-shadow: 0 4px 20px rgba(37, 211, 102, 0.5);
+            z-index: 1000;
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+
+            0%,
+            100% {
+                transform: scale(1);
+            }
+
+            50% {
+                transform: scale(1.1);
+            }
+        }
+
+        .nav-link {
+            position: relative;
+            transition: color 0.3s;
+        }
+
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: #FF8C00;
+            transition: width 0.3s;
+        }
+
+        .nav-link:hover::after {
+            width: 100%;
+        }
+    </style>
+</head>
+
+<body class="bg-gray-50">
+
+    <a href="https://wa.me/51944296912?text=Hola,%20me%20interesa%20conocer%20más%20sobre%20sus%20productos"
+        target="_blank" rel="noopener" class="whatsapp-float" title="Contáctanos por WhatsApp">
+        <i class="fab fa-whatsapp" aria-hidden="true"></i>
+        <span class="sr-only">Contáctanos por WhatsApp</span>
+    </a>
+
+    <header class="bg-white shadow-md fixed w-full top-0 z-50">
+        <nav class="container mx-auto px-6 py-4">
+            <div class="flex justify-between items-center">
+                <div class="text-2xl font-bold text-orange-500">
+                    <a href="index.html">🥛 Yogurin Bustamante</a>
+                </div>
+                <div class="hidden md:flex space-x-8">
+                    <a href="index.html" class="nav-link hover:text-orange-500">Inicio</a>
+                    <a href="tienda.html" class="nav-link hover:text-orange-500">Tienda</a>
+                    <a href="servicios.html" class="nav-link hover:text-orange-500">Servicios</a>
+                    <a href="nosotros.html" class="nav-link hover:text-orange-500">Nosotros</a>
+                    <a href="contacto.html" class="nav-link hover:text-orange-500 text-orange-500">Contacto</a>
+                </div>
+                <button type="button" class="md:hidden" id="mobile-menu-btn" title="Abrir menú de navegación">
+                    <i class="fas fa-bars text-2xl" aria-hidden="true"></i>
+                    <span class="sr-only">Abrir menú de navegación</span>
+                </button>
+            </div>
+            <div id="mobile-menu" class="hidden md:hidden mt-4 pb-4">
+                <a href="index.html" class="block py-2 hover:text-orange-500">Inicio</a>
+                <a href="tienda.html" class="block py-2 hover:text-orange-500">Tienda</a>
+                <a href="servicios.html" class="block py-2 hover:text-orange-500">Servicios</a>
+                <a href="nosotros.html" class="block py-2 hover:text-orange-500">Nosotros</a>
+                <a href="contacto.html" class="block py-2 hover:text-orange-500 text-orange-500">Contacto</a>
+            </div>
+        </nav>
+    </header>
+
+    <section class="pt-32 pb-12 gradient-bg">
+        <div class="container mx-auto px-6 text-center">
+            <h1 class="text-5xl md:text-6xl font-bold text-white mb-4">Contáctanos</h1>
+            <p class="text-xl text-white opacity-90">Estamos aquí para ayudarte</p>
+        </div>
+    </section>
+
+    <section class="py-20 bg-white">
+        <div class="container mx-auto px-6">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
+
+                <!-- Formulario de Contacto -->
+                <div>
+                    <h2 class="text-3xl font-bold mb-6 text-gray-900">Envíanos un Mensaje</h2>
+                    <p class="text-gray-600 mb-8">Completa el formulario y nos pondremos en contacto contigo lo antes
+                        posible.</p>
+
+                    <form class="space-y-6" id="contact-form">
+                        <div>
+                            <label class="block text-gray-700 font-semibold mb-2">Nombre completo *</label>
+                            <input type="text" name="nombre"
+                                class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:border-orange-500 transition-colors"
+                                placeholder="Tu nombre" required>
+                        </div>
+
+                        <div>
+                            <label class="block text-gray-700 font-semibold mb-2">Email *</label>
+                            <input type="email" name="email"
+                                class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:border-orange-500 transition-colors"
+                                placeholder="tucorreo@ejemplo.com" required>
+                        </div>
+
+                        <div>
+                            <label class="block text-gray-700 font-semibold mb-2">Teléfono *</label>
+                            <input type="tel" name="telefono"
+                                class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:border-orange-500 transition-colors"
+                                placeholder="+51 999 999 999" required>
+                        </div>
+
+                        <div>
+                            <label for="asunto" class="block text-gray-700 font-semibold mb-2">Asunto *</label>
+                            <select id="asunto" name="asunto"
+                                class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:border-orange-500 transition-colors"
+                                required>
+                                <option value="">Selecciona una opción</option>
+                                <option value="pedido">Realizar un pedido</option>
+                                <option value="mayoreo">Venta al por mayor</option>
+                                <option value="distribucion">Servicio de distribución</option>
+                                <option value="personalizado">Producto personalizado</option>
+                                <option value="suscripcion">Suscripción</option>
+                                <option value="otro">Otro</option>
+                            </select>
+                        </div>
+
+                        <div>
+                            <label class="block text-gray-700 font-semibold mb-2">Mensaje *</label>
+                            <textarea rows="5" name="mensaje"
+                                class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:border-orange-500 transition-colors"
+                                placeholder="Escribe tu mensaje aquí..." required></textarea>
+                        </div>
+
+                        <button type="submit"
+                            class="w-full bg-orange-500 text-white py-4 rounded-lg font-semibold hover:bg-orange-600 transition-colors transform hover:scale-105">
+                            <i class="fas fa-paper-plane mr-2"></i>Enviar Mensaje
+                        </button>
+                    </form>
+                </div>
+
+                <!-- Información de Contacto -->
+                <div>
+                    <h2 class="text-3xl font-bold mb-6 text-gray-900">Información de Contacto</h2>
+                    <p class="text-gray-600 mb-8">También puedes contactarnos directamente por estos medios:</p>
+
+                    <div class="space-y-6 mb-10">
+
+                        <div
+                            class="flex items-start space-x-4 bg-gradient-to-br from-green-50 to-white p-6 rounded-2xl shadow-lg hover-lift">
+                            <div
+                                class="flex-shrink-0 w-14 h-14 bg-green-500 rounded-full flex items-center justify-center">
+                                <i class="fab fa-whatsapp text-white text-2xl"></i>
+                            </div>
+                            <div>
+                                <h3 class="font-bold text-xl mb-2">WhatsApp</h3>
+                                <p class="text-gray-600 mb-2">¡La forma más rápida de contactarnos!</p>
+                                <a href="https://wa.me/51944296912"
+                                    class="text-green-600 font-semibold hover:text-green-700 text-lg">
+                                    +51 944 296 912
+                                </a>
+                                <p class="text-sm text-gray-500 mt-2">Disponible: Lun - Sáb, 8am - 8pm</p>
+                            </div>
+                        </div>
+
+                        <div
+                            class="flex items-start space-x-4 bg-gradient-to-br from-orange-50 to-white p-6 rounded-2xl shadow-lg hover-lift">
+                            <div
+                                class="flex-shrink-0 w-14 h-14 bg-orange-500 rounded-full flex items-center justify-center">
+                                <i class="fas fa-phone text-white text-2xl"></i>
+                            </div>
+                            <div>
+                                <h3 class="font-bold text-xl mb-2">Teléfono</h3>
+                                <p class="text-gray-600 mb-2">Llámanos directamente</p>
+                                <a href="tel:+51944296912"
+                                    class="text-orange-600 font-semibold hover:text-orange-700 text-lg">
+                                    +51 944 296 912
+                                </a>
+                                <p class="text-sm text-gray-500 mt-2">Lun - Sáb: 8am - 8pm</p>
+                            </div>
+                        </div>
+
+                        <div
+                            class="flex items-start space-x-4 bg-gradient-to-br from-blue-50 to-white p-6 rounded-2xl shadow-lg hover-lift">
+                            <div
+                                class="flex-shrink-0 w-14 h-14 bg-blue-500 rounded-full flex items-center justify-center">
+                                <i class="fas fa-envelope text-white text-2xl"></i>
+                            </div>
+                            <div>
+                                <h3 class="font-bold text-xl mb-2">Email</h3>
+                                <p class="text-gray-600 mb-2">Escríbenos un correo</p>
+                                <a href="mailto:ventas@yogurinbustamante.com"
+                                    class="text-blue-600 font-semibold hover:text-blue-700 block">
+                                    ventas@yogurinbustamante.com
+                                </a>
+                                <a href="mailto:yogurinbustamante@gmail.com"
+                                    class="text-blue-600 font-semibold hover:text-blue-700 block">
+                                    yogurinbustamante@gmail.com
+                                </a>
+                                <p class="text-sm text-gray-500 mt-2">Respuesta en 24 horas</p>
+                            </div>
+                        </div>
+
+                        <div
+                            class="flex items-start space-x-4 bg-gradient-to-br from-purple-50 to-white p-6 rounded-2xl shadow-lg hover-lift">
+                            <div
+                                class="flex-shrink-0 w-14 h-14 bg-purple-500 rounded-full flex items-center justify-center">
+                                <i class="fas fa-map-marker-alt text-white text-2xl"></i>
+                            </div>
+                            <div>
+                                <h3 class="font-bold text-xl mb-2">Ubicación</h3>
+                                <p class="text-gray-600 mb-2">Sayán, Lima - Perú</p>
+                                <p class="text-gray-600">Entregas a todo el Perú</p>
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <!-- Redes Sociales -->
+                    <div class="bg-gradient-to-br from-gray-50 to-white p-8 rounded-2xl shadow-lg">
+                        <h3 class="font-bold text-xl mb-4">Síguenos en Redes Sociales</h3>
+                    <div class="flex space-x-4">
+                        <a href="#" title="Facebook"
+                            class="bg-blue-500 text-white w-10 h-10 rounded-full flex items-center justify-center hover:bg-blue-600 transition-colors">
+                            <i class="fab fa-facebook-f" aria-hidden="true"></i>
+                            <span class="sr-only">Facebook</span>
+                        </a>
+                        <a href="#" title="Instagram"
+                            class="bg-gradient-to-r from-purple-500 to-pink-500 text-white w-10 h-10 rounded-full flex items-center justify-center hover:opacity-80 transition-opacity">
+                            <i class="fab fa-instagram" aria-hidden="true"></i>
+                            <span class="sr-only">Instagram</span>
+                        </a>
+                        <a href="#" title="Twitter"
+                            class="bg-blue-400 text-white w-10 h-10 rounded-full flex items-center justify-center hover:bg-blue-500 transition-colors">
+                            <i class="fab fa-twitter" aria-hidden="true"></i>
+                            <span class="sr-only">Twitter</span>
+                        </a>
+                    </div>
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Horarios de Atención -->
+    <section class="py-16 bg-gray-50">
+        <div class="container mx-auto px-6">
+            <h2 class="text-3xl font-bold text-center mb-10 text-gray-900">Horarios de Atención</h2>
+            <div class="max-w-3xl mx-auto bg-white rounded-2xl shadow-xl overflow-hidden">
+                <div class="grid grid-cols-1 md:grid-cols-2">
+                    <div class="p-8 bg-gradient-to-br from-orange-500 to-orange-600 text-white">
+                        <h3 class="text-2xl font-bold mb-6">Días Laborables</h3>
+                        <div class="space-y-4">
+                            <div class="flex justify-between items-center">
+                                <span class="font-semibold">Lunes - Viernes:</span>
+                                <span>8:00 AM - 8:00 PM</span>
+                            </div>
+                            <div class="flex justify-between items-center">
+                                <span class="font-semibold">Sábados:</span>
+                                <span>8:00 AM - 6:00 PM</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="p-8">
+                        <h3 class="text-2xl font-bold mb-6 text-gray-900">Días No Laborables</h3>
+                        <div class="space-y-4">
+                            <div class="flex justify-between items-center">
+                                <span class="font-semibold text-gray-700">Domingos:</span>
+                                <span class="text-gray-600">Cerrado</span>
+                            </div>
+                            <div class="flex justify-between items-center">
+                                <span class="font-semibold text-gray-700">Feriados:</span>
+                                <span class="text-gray-600">Cerrado</span>
+                            </div>
+                        </div>
+                        <div class="mt-6 p-4 bg-blue-50 rounded-lg">
+                            <p class="text-sm text-gray-600">
+                                <i class="fas fa-info-circle text-blue-500 mr-2"></i>
+                                WhatsApp disponible 24/7 para pedidos urgentes
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Mapa / Cobertura -->
+    <section class="py-16 bg-white">
+        <div class="container mx-auto px-6">
+            <h2 class="text-3xl font-bold text-center mb-10 text-gray-900">Áreas de Cobertura</h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-5xl mx-auto">
+
+                <div class="bg-gradient-to-br from-green-50 to-white p-8 rounded-2xl shadow-lg text-center hover-lift">
+                    <div class="text-5xl mb-4">🏙️</div>
+                    <h3 class="text-xl font-bold mb-3 text-gray-900">Lima Metropolitana</h3>
+                    <p class="text-gray-600 mb-4">Entrega en 24-48 horas</p>
+                    <ul class="text-sm text-gray-600 space-y-1">
+                        <li>San Isidro, Miraflores, Surco</li>
+                        <li>La Molina, San Borja</li>
+                        <li>Todos los distritos de Lima</li>
+                    </ul>
+                </div>
+
+                <div class="bg-gradient-to-br from-blue-50 to-white p-8 rounded-2xl shadow-lg text-center hover-lift">
+                    <div class="text-5xl mb-4">🚢</div>
+                    <h3 class="text-xl font-bold mb-3 text-gray-900">Callao</h3>
+                    <p class="text-gray-600 mb-4">Entrega en 24-48 horas</p>
+                    <ul class="text-sm text-gray-600 space-y-1">
+                        <li>Callao Cercado</li>
+                        <li>Bellavista</li>
+                        <li>La Perla</li>
+                    </ul>
+                </div>
+
+                <div class="bg-gradient-to-br from-purple-50 to-white p-8 rounded-2xl shadow-lg text-center hover-lift">
+                    <div class="text-5xl mb-4">🗺️</div>
+                    <h3 class="text-xl font-bold mb-3 text-gray-900">Provincias</h3>
+                    <p class="text-gray-600 mb-4">Entrega en 3-5 días</p>
+                    <ul class="text-sm text-gray-600 space-y-1">
+                        <li>Arequipa, Cusco, Trujillo</li>
+                        <li>Piura, Chiclayo</li>
+                        <li>Y más ciudades del Perú</li>
+                    </ul>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="py-20 gradient-bg">
+        <div class="container mx-auto px-6 text-center">
+            <h2 class="text-4xl md:text-5xl font-bold text-white mb-6">¿Tienes alguna pregunta?</h2>
+            <p class="text-xl text-white mb-8 opacity-90">Estamos aquí para ayudarte. ¡Contáctanos ahora!</p>
+            <a href="https://wa.me/51944296912?text=Hola,%20tengo%20una%20consulta"
+                class="inline-block bg-white text-orange-500 px-10 py-4 rounded-full font-bold text-lg hover:bg-gray-100 transition-all transform hover:scale-105 shadow-2xl">
+                <i class="fab fa-whatsapp mr-2"></i>Chatear por WhatsApp
+            </a>
+        </div>
+    </section>
+
+    <footer class="bg-gray-900 text-white py-12">
+        <div class="container mx-auto px-6">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <div>
+                    <h3 class="text-2xl font-bold mb-4 text-orange-500">🥛 Yogurin Bustamante</h3>
+                    <p class="text-gray-400">Yogurt natural peruano de la más alta calidad para toda la familia.</p>
+                </div>
+                <div>
+                    <h4 class="font-bold text-lg mb-4">Enlaces Rápidos</h4>
+                    <ul class="space-y-2">
+                        <li><a href="index.html"
+                                class="text-gray-400 hover:text-orange-500 transition-colors">Inicio</a></li>
+                        <li><a href="tienda.html"
+                                class="text-gray-400 hover:text-orange-500 transition-colors">Tienda</a></li>
+                        <li><a href="servicios.html"
+                                class="text-gray-400 hover:text-orange-500 transition-colors">Servicios</a></li>
+                        <li><a href="nosotros.html"
+                                class="text-gray-400 hover:text-orange-500 transition-colors">Nosotros</a></li>
+                        <li><a href="contacto.html"
+                                class="text-gray-400 hover:text-orange-500 transition-colors">Contacto</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-bold text-lg mb-4">Contacto</h4>
+                    <ul class="space-y-2 text-gray-400">
+                        <li><i class="fas fa-phone mr-2"></i>+51 944 296 912</li>
+                        <li><i class="fas fa-envelope mr-2"></i>ventas@yogurinbustamante.com</li>
+                        <li><i class="fas fa-map-marker-alt mr-2"></i>Lima, Perú</li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-bold text-lg mb-4">Síguenos</h4>
+                    <div class="flex space-x-4">
+                        <a href="#" title="Facebook"
+                            class="bg-blue-500 text-white w-10 h-10 rounded-full flex items-center justify-center hover:bg-blue-600 transition-colors">
+                            <i class="fab fa-facebook-f" aria-hidden="true"></i>
+                            <span class="sr-only">Facebook</span>
+                        </a>
+                        <a href="#" title="Instagram"
+                            class="bg-gradient-to-r from-purple-500 to-pink-500 text-white w-10 h-10 rounded-full flex items-center justify-center hover:opacity-80 transition-opacity">
+                            <i class="fab fa-instagram" aria-hidden="true"></i>
+                            <span class="sr-only">Instagram</span>
+                        </a>
+                        <a href="#" title="Twitter"
+                            class="bg-blue-400 text-white w-10 h-10 rounded-full flex items-center justify-center hover:bg-blue-500 transition-colors">
+                            <i class="fab fa-twitter" aria-hidden="true"></i>
+                            <span class="sr-only">Twitter</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="border-t border-gray-800 mt-8 pt-8 text-center">
+                <p class="text-gray-400 text-sm">© 2025 Yogurin Bustamante. Todos los derechos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        mobileMenuBtn.addEventListener('click', () => { mobileMenu.classList.toggle('hidden'); });
+
+        document.getElementById('contact-form').addEventListener('submit', (e) => {
+            e.preventDefault();
+            const formData = new FormData(e.target);
+            const mensaje = `Hola, mi nombre es ${formData.get('nombre')}. ${formData.get('mensaje')}`;
+            const whatsappURL = `https://wa.me/51944296912?text=${encodeURIComponent(mensaje)}`;
+            window.open(whatsappURL, '_blank');
+            alert('¡Gracias por tu mensaje! Te redirigiremos a WhatsApp para completar tu consulta.');
+        });
+    </script>
+</body>
+
+</html>
