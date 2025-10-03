@@ -147,30 +147,102 @@
   opacity: 0.3;
   animation: float 6s ease-in-out infinite;
 }
-        .gradient-bg {
-            background: linear-gradient(135deg, #87CEEB 0%, #FF8C00 100%);
-        }
+.gradient-bg {
+  background: linear-gradient(135deg, #87ceeb 0%, #ff8c00 100%);
+}
 
-        .hover-lift {
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-        }
-               @keyframes pulse {
+.hover-lift {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+@keyframes pulse {
+  0%,
+  100% {
+    transform: scale(1);
+  }
 
-            0%,
-            100% {
-                transform: scale(1);
-            }
+  50% {
+    transform: scale(1.1);
+  }
+}
 
-            50% {
-                transform: scale(1.1);
-            }
-        }
+.filter-btn {
+  transition: all 0.3s;
+}
 
-                .filter-btn {
-            transition: all 0.3s;
-        }
+.filter-btn.active {
+  background: #ff8c00;
+  color: white;
+}
 
-        .filter-btn.active {
-            background: #FF8C00;
-            color: white;
-        }
+
+/* 404 */
+@keyframes float {
+  0%,
+  100% {
+    transform: translateY(0px);
+  }
+
+  50% {
+    transform: translateY(-20px);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.float-animation {
+  animation: float 3s ease-in-out infinite;
+}
+
+.fade-in {
+  animation: fadeIn 0.8s ease-out;
+}
+
+.loading-dots::after {
+  content: "...";
+  animation: dots 1.5s steps(4, end) infinite;
+}
+
+@keyframes dots {
+  0%,
+  20% {
+    content: ".";
+  }
+
+  40% {
+    content: "..";
+  }
+
+  60%,
+  100% {
+    content: "...";
+  }
+}
+
+.spinner {
+  border: 3px solid rgba(255, 140, 0, 0.3);
+  border-top: 3px solid #ff8c00;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}

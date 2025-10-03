@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
+        http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
+
+    <!-- Página Principal -->
+    <url>
+        <loc>https://yogurinbustamante.com/index.html</loc>
+        <lastmod>2025-10-03</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>1.0</priority>
+    </url>
+
+    <!-- Tienda Online -->
+    <url>
+        <loc>https://yogurinbustamante.com/tienda.html</loc>
+        <lastmod>2025-10-03</lastmod>
+        <changefreq>daily</changefreq>
+        <priority>0.9</priority>
+    </url>
+
+    <!-- Servicios -->
+    <url>
+        <loc>https://yogurinbustamante.com/servicios.html</loc>
+        <lastmod>2025-10-03</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+
+    <!-- Sobre Nosotros -->
+    <url>
+        <loc>https://yogurinbustamante.com/nosotros.html</loc>
+        <lastmod>2025-10-03</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+    </url>
+
+    <!-- Contacto -->
+    <url>
+        <loc>https://yogurinbustamante.com/contacto.html</loc>
+        <lastmod>2025-10-03</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+
+</urlset>

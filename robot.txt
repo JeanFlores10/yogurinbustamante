@@ -1,0 +1,44 @@
+# robots.txt para Yogurin Bustamante
+
+# Permitir acceso a todos los bots de búsqueda
+User-agent: *
+Allow: /
+
+# Páginas principales
+Allow: /index.html
+Allow: /tienda.html
+Allow: /servicios.html
+Allow: /nosotros.html
+Allow: /contacto.html
+
+# Bloquear acceso a carpetas privadas (si las tienes)
+Disallow: /admin/
+Disallow: /private/
+Disallow: /*.json$
+
+# Permitir imágenes
+Allow: /img/
+Allow: /*.jpg$
+Allow: /*.png$
+Allow: /*.webp$
+Allow: /*.svg$
+
+# Permitir CSS y JS
+Allow: /*.css$
+Allow: /*.js$
+
+# Ubicación del sitemap
+Sitemap: https://yogurinbustamante.com/sitemap.xml
+
+# Configuración para bots específicos
+User-agent: Googlebot
+Allow: /
+
+User-agent: Googlebot-Image
+Allow: /img/
+
+User-agent: Bingbot
+Allow: /
+
+# Tiempo de espera entre solicitudes (10 segundos)
+Crawl-delay: 10
