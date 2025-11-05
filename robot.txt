@@ -5,11 +5,11 @@ User-agent: *
 Allow: /
 
 # Páginas principales
-Allow: /index.html
-Allow: /tienda.html
-Allow: /servicios.html
-Allow: /nosotros.html
-Allow: /contacto.html
+Allow: /index
+Allow: /tienda
+Allow: /servicios
+Allow: /nosotros
+Allow: /contacto
 
 # Bloquear acceso a carpetas privadas (si las tienes)
 Disallow: /admin/
