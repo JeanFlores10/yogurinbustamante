@@ -40,5 +40,5 @@ Allow: /img/
 User-agent: Bingbot
 Allow: /
 
-# Tiempo de espera entre solicitudes (10 segundos)
-Crawl-delay: 10
+# Tiempo de espera entre solicitudes (1 segundo - optimizado para rastreo rápido)
+Crawl-delay: 1
