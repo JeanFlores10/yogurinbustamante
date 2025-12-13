@@ -7,7 +7,7 @@
     <!-- Página Principal -->
     <url>
         <loc>https://yogurinbustamante.com/</loc>
-        <lastmod>2025-11-10</lastmod>
+        <lastmod>2025-12-12</lastmod>
         <changefreq>weekly</changefreq>
         <priority>1.0</priority>
     </url>
@@ -15,7 +15,7 @@
     <!-- Tienda Online -->
     <url>
         <loc>https://yogurinbustamante.com/tienda</loc>
-        <lastmod>2025-11-10</lastmod>
+        <lastmod>2025-12-12</lastmod>
         <changefreq>daily</changefreq>
         <priority>0.9</priority>
     </url>
@@ -23,7 +23,7 @@
     <!-- Servicios -->
     <url>
         <loc>https://yogurinbustamante.com/servicios</loc>
-        <lastmod>2025-11-10</lastmod>
+        <lastmod>2025-12-12</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.85</priority>
     </url>
@@ -31,7 +31,7 @@
     <!-- Contacto -->
     <url>
         <loc>https://yogurinbustamante.com/contacto</loc>
-        <lastmod>2025-11-10</lastmod>
+        <lastmod>2025-12-12</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.8</priority>
     </url>
@@ -39,7 +39,7 @@
     <!-- Sobre Nosotros -->
     <url>
         <loc>https://yogurinbustamante.com/nosotros</loc>
-        <lastmod>2025-11-10</lastmod>
+        <lastmod>2025-12-12</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>

@@ -1,0 +1,24 @@
+# Redirecciones para Cloudflare Pages - Yogurin Bustamante
+
+# Redireccionar www a no-www
+https://www.yogurinbustamante.com/* https://yogurinbustamante.com/:splat 301!
+http://www.yogurinbustamante.com/* https://yogurinbustamante.com/:splat 301!
+
+# Forzar HTTPS
+http://yogurinbustamante.com/* https://yogurinbustamante.com/:splat 301!
+
+# Redireccionar URLs con .html a URLs sin .html
+/index.html / 301!
+/tienda.html /tienda 301!
+/servicios.html /servicios 301!
+/nosotros.html /nosotros 301!
+/contacto.html /contacto 301!
+/calculadora.html /calculadora 301!
+/calculadora2.html /calculadora2 301!
+/index2.html /index2 301!
+
+# Redireccionar /index a /
+/index / 301!
+
+# Página 404 personalizada
+/* /404.html 404
