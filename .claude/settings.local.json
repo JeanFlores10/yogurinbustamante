@@ -1,7 +1,10 @@
 {
   "permissions": {
     "allow": [
-      "Bash(dir:*)"
+      "Bash(dir:*)",
+      "Bash(node:*)",
+      "Bash(npm install:*)",
+      "Bash(npx tailwindcss:*)"
     ],
     "deny": [],
     "ask": []

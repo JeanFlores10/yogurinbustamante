@@ -22,6 +22,7 @@ issues_overview_report.csv
 DESPLIEGUE_DROPLET.md
 PLAN_REPORTES_BALANCE.md
 
-# Node (si se usa en el futuro)
+# Node
 node_modules/
 npm-debug.log*
+package-lock.json

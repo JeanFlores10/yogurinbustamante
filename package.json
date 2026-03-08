@@ -1,0 +1,11 @@
+{
+  "name": "yogurin-bustamante",
+  "version": "1.0.0",
+  "scripts": {
+    "build:css": "tailwindcss -i input.css -o css/tailwind.min.css --minify",
+    "watch:css": "tailwindcss -i input.css -o css/tailwind.min.css --watch"
+  },
+  "devDependencies": {
+    "tailwindcss": "^3.4.17"
+  }
+}
