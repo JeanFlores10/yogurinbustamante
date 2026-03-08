@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description"
-        content="Yogurin Bustamante: Yogurt natural peruano artesanal, sin conservantes, sin azúcar añadida. Envíos programados semanalmente en Sayán, Huaura, Huacho, Barranca y toda la provincia de Huaura. Venta y distribución de productos lácteos saludables.">
+        content="Yogurin Bustamante: yogurt natural peruano artesanal, sin conservantes ni azúcar añadida. Envíos programados en Sayán, Huaura, Huacho y Barranca.">
     <meta name="keywords"
         content="yogurt, yogurt natural, yogurt artesanal, productos lácteos, yogurt peruano, yogurt saludable, Yogurin Bustamante, yogur, yogur natural,
          yogur artesanal, yogur peruano, yogur saludable, yogur sin azúcar, yogur sin conservantes, yogurt Huacho, yogurt Sayán, yogurt Huaura,
@@ -36,7 +36,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="preconnect" href="https://www.googletagmanager.com">
     <link rel="stylesheet" href="css/styles.css">
-    <link rel="preload" as="image" href="./img/img-hero.webp" fetchpriority="high">
+    <link rel="preload" as="image" href="./img/webp/img-hero-1920.webp" fetchpriority="high">
     <link rel="manifest" href="/manifest.json">
     <meta name="theme-color" content="#ff8c00">
 <meta name="facebook-domain-verification" content="l8bhembncq9usj280tg207hm92enb2" />
@@ -48,6 +48,13 @@
     gtag('js', new Date());
 
     gtag('config', 'G-LYSYR4QZE1');
+</script>
+<script type="text/javascript">
+    (function(c,l,a,r,i,t,y){
+        c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+        t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+        y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+    })(window, document, "clarity", "script", "vsdyrzjs1j");
 </script>
 <script type="application/ld+json">
 {
@@ -260,9 +267,14 @@
                     </div>
                 </div>
                 <div class="md:w-1/2 mt-10 md:mt-0 animate-fade-in">
-                    <img src="./img/img-hero.webp" alt="Yogurt natural artesanal" width="800" height="600"
-                        class="rounded-3xl shadow-lg transition-transform duration-500 hover:scale-[1.03]"
-                        loading="eager" fetchpriority="high" decoding="async">
+                    <picture>
+                        <source srcset="./img/webp/img-hero-320.webp" type="image/webp" media="(max-width: 320px)">
+                        <source srcset="./img/webp/img-hero-640.webp" type="image/webp" media="(max-width: 640px)">
+                        <source srcset="./img/webp/img-hero-1024.webp" type="image/webp" media="(max-width: 1024px)">
+                        <img src="./img/webp/img-hero-1920.webp" alt="Yogurt natural artesanal" width="800" height="600"
+                            class="rounded-3xl shadow-lg transition-transform duration-500 hover:scale-[1.03]"
+                            loading="eager" fetchpriority="high" decoding="async">
+                    </picture>
                 </div>
 
             </div>
@@ -274,22 +286,22 @@
             <div class="grid grid-cols-2 md:grid-cols-4 gap-8">
                 <div class="text-center animate-fade-in hover-lift bg-white p-6 rounded-xl shadow-md">
                     <div class="text-5xl mb-4">🌿</div>
-                    <h3 class="font-bold text-lg mb-2">100% Natural</h3>
+                    <h2 class="font-bold text-lg mb-2">100% Natural</h2>
                     <p class="text-gray-600 text-sm">Sin conservantes artificiales</p>
                 </div>
                 <div class="text-center animate-fade-in hover-lift bg-white p-6 rounded-xl shadow-md">
                     <div class="text-5xl mb-4">🚫</div>
-                    <h3 class="font-bold text-lg mb-2">Sin Azúcar Añadida</h3>
+                    <h2 class="font-bold text-lg mb-2">Sin Azúcar Añadida</h2>
                     <p class="text-gray-600 text-sm">Endulzado naturalmente</p>
                 </div>
                 <div class="text-center animate-fade-in hover-lift bg-white p-6 rounded-xl shadow-md">
                     <div class="text-5xl mb-4">💪</div>
-                    <h3 class="font-bold text-lg mb-2">Rico en Proteína</h3>
+                    <h2 class="font-bold text-lg mb-2">Rico en Proteína</h2>
                     <p class="text-gray-600 text-sm">Nutrición completa</p>
                 </div>
                 <div class="text-center animate-fade-in hover-lift bg-white p-6 rounded-xl shadow-md">
                     <div class="text-5xl mb-4">🚚</div>
-                    <h3 class="font-bold text-lg mb-2">Envíos Programados</h3>
+                    <h2 class="font-bold text-lg mb-2">Envíos Programados</h2>
                     <p class="text-gray-600 text-sm">Sayán, Huaura y provincia de Huaura</p>
                 </div>
             </div>
@@ -303,7 +315,12 @@
                 ingredientes</p>
             <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
                 <div class="product-card hover-lift bg-white rounded-2xl shadow-lg overflow-hidden">
-                    <img src="./img/yogurt-natural.webp" alt="Yogurt Natural" loading="lazy" class="w-full h-64 object-cover">
+                    <picture>
+                        <source srcset="./img/webp/yogurt-natural-320.webp" type="image/webp" media="(max-width: 320px)">
+                        <source srcset="./img/webp/yogurt-natural-640.webp" type="image/webp" media="(max-width: 640px)">
+                        <source srcset="./img/webp/yogurt-natural-1024.webp" type="image/webp" media="(max-width: 1024px)">
+                        <img src="./img/webp/yogurt-natural-1920.webp" alt="Yogurt Natural" width="800" height="533" loading="lazy" class="w-full h-64 object-cover">
+                    </picture>
                     <div class="p-6">
                         <span class="bg-green-100 text-green-800 text-xs px-3 py-1 rounded-full">Más vendido</span>
                         <span class="bg-blue-100 text-blue-800 text-xs px-3 py-1 rounded-full">Delivery Huacho</span>
@@ -317,7 +334,12 @@
                     </div>
                 </div>
                 <div class="product-card hover-lift bg-white rounded-2xl shadow-lg overflow-hidden">
-                    <img src="./img/yogurt-fresa.webp" alt="Yogurt Fresa" loading="lazy" class="w-full h-64 object-cover">
+                    <picture>
+                        <source srcset="./img/webp/yogurt-fresa-320.webp" type="image/webp" media="(max-width: 320px)">
+                        <source srcset="./img/webp/yogurt-fresa-640.webp" type="image/webp" media="(max-width: 640px)">
+                        <source srcset="./img/webp/yogurt-fresa-1024.webp" type="image/webp" media="(max-width: 1024px)">
+                        <img src="./img/webp/yogurt-fresa-1920.webp" alt="Yogurt Fresa" width="800" height="533" loading="lazy" class="w-full h-64 object-cover">
+                    </picture>
                     <div class="p-6">
                         <span class="bg-green-100 text-green-800 text-xs px-3 py-1 rounded-full">Más vendido</span>
                         <span class="bg-purple-100 text-purple-800 text-xs px-3 py-1 rounded-full">Envío Andahuasi</span>
@@ -331,7 +353,12 @@
                     </div>
                 </div>
                 <div class="product-card hover-lift bg-white rounded-2xl shadow-lg overflow-hidden">
-                    <img src="./img/yogurt-arandano.webp" alt="Yogurt Arándanos" loading="lazy" class="w-full h-64 object-cover">
+                    <picture>
+                        <source srcset="./img/webp/yogurt-arandano-320.webp" type="image/webp" media="(max-width: 320px)">
+                        <source srcset="./img/webp/yogurt-arandano-640.webp" type="image/webp" media="(max-width: 640px)">
+                        <source srcset="./img/webp/yogurt-arandano-1024.webp" type="image/webp" media="(max-width: 1024px)">
+                        <img src="./img/webp/yogurt-arandano-1920.webp" alt="Yogurt Arándanos" width="800" height="533" loading="lazy" class="w-full h-64 object-cover">
+                    </picture>
                     <div class="p-6">
                         <span class="bg-green-100 text-green-800 text-xs px-3 py-1 rounded-full">Más vendido</span>
                         <span class="bg-indigo-100 text-indigo-800 text-xs px-3 py-1 rounded-full">Delivery Sayán</span>
@@ -345,7 +372,12 @@
                     </div>
                 </div>
                 <div class="product-card hover-lift bg-white rounded-2xl shadow-lg overflow-hidden">
-                    <img src="./img/yogurt-guanabana.webp" alt="Yogurt Guanábana" loading="lazy" class="w-full h-64 object-cover">
+                    <picture>
+                        <source srcset="./img/webp/yogurt-guanabana-320.webp" type="image/webp" media="(max-width: 320px)">
+                        <source srcset="./img/webp/yogurt-guanabana-640.webp" type="image/webp" media="(max-width: 640px)">
+                        <source srcset="./img/webp/yogurt-guanabana-1024.webp" type="image/webp" media="(max-width: 1024px)">
+                        <img src="./img/webp/yogurt-guanabana-1920.webp" alt="Yogurt Guanábana" width="800" height="533" loading="lazy" class="w-full h-64 object-cover">
+                    </picture>
                     <div class="p-6">
                         <span class="bg-green-100 text-green-800 text-xs px-3 py-1 rounded-full">Más vendido</span>
                         <span class="bg-teal-100 text-teal-800 text-xs px-3 py-1 rounded-full">Delivery Barranca</span>
@@ -359,7 +391,12 @@
                     </div>
                 </div>
                 <div class="product-card hover-lift bg-white rounded-2xl shadow-lg overflow-hidden">
-                    <img src="./img/yogurt-platano.webp" alt="Yogurt Plátano" loading="lazy" class="w-full h-64 object-cover">
+                    <picture>
+                        <source srcset="./img/webp/yogurt-platano-320.webp" type="image/webp" media="(max-width: 320px)">
+                        <source srcset="./img/webp/yogurt-platano-640.webp" type="image/webp" media="(max-width: 640px)">
+                        <source srcset="./img/webp/yogurt-platano-1024.webp" type="image/webp" media="(max-width: 1024px)">
+                        <img src="./img/webp/yogurt-platano-1920.webp" alt="Yogurt Plátano" width="800" height="533" loading="lazy" class="w-full h-64 object-cover">
+                    </picture>
                     <div class="p-6">
                         <span class="bg-green-100 text-green-800 text-xs px-3 py-1 rounded-full">Más vendido</span>
                         <span class="bg-amber-100 text-amber-800 text-xs px-3 py-1 rounded-full">Entrega programada</span>
@@ -373,7 +410,12 @@
                     </div>
                 </div>
                 <div class="product-card hover-lift bg-white rounded-2xl shadow-lg overflow-hidden">
-                    <img src="./img/yogurt-pina.webp" alt="Yogurt Piña" loading="lazy" class="w-full h-64 object-cover">
+                    <picture>
+                        <source srcset="./img/webp/yogurt-pina-320.webp" type="image/webp" media="(max-width: 320px)">
+                        <source srcset="./img/webp/yogurt-pina-640.webp" type="image/webp" media="(max-width: 640px)">
+                        <source srcset="./img/webp/yogurt-pina-1024.webp" type="image/webp" media="(max-width: 1024px)">
+                        <img src="./img/webp/yogurt-pina-1920.webp" alt="Yogurt Piña" width="800" height="533" loading="lazy" class="w-full h-64 object-cover">
+                    </picture>
                     <div class="p-6">
                         <span class="bg-green-100 text-green-800 text-xs px-3 py-1 rounded-full">Más vendido</span>
                         <span class="bg-blue-100 text-blue-800 text-xs px-3 py-1 rounded-full">Delivery Huacho</span>
@@ -387,7 +429,12 @@
                     </div>
                 </div>
                 <div class="product-card hover-lift bg-white rounded-2xl shadow-lg overflow-hidden">
-                    <img src="./img/yogurt-pitahaya.webp" alt="Yogurt Pitahaya" loading="lazy" class="w-full h-64 object-cover">
+                    <picture>
+                        <source srcset="./img/webp/yogurt-pitahaya-320.webp" type="image/webp" media="(max-width: 320px)">
+                        <source srcset="./img/webp/yogurt-pitahaya-640.webp" type="image/webp" media="(max-width: 640px)">
+                        <source srcset="./img/webp/yogurt-pitahaya-1024.webp" type="image/webp" media="(max-width: 1024px)">
+                        <img src="./img/webp/yogurt-pitahaya-1920.webp" alt="Yogurt Pitahaya" width="800" height="533" loading="lazy" class="w-full h-64 object-cover">
+                    </picture>
                     <div class="p-6">
                         <span class="bg-green-100 text-green-800 text-xs px-3 py-1 rounded-full">Más vendido</span>
                         <span class="bg-pink-100 text-pink-800 text-xs px-3 py-1 rounded-full">Envío Andahuasi</span>
@@ -446,7 +493,12 @@
         <div class="container mx-auto px-6">
             <div class="flex flex-col md:flex-row items-center gap-12">
                 <div class="md:w-1/2">
-                    <img src="./img/sobre-nosotros.webp" loading="lazy" alt="Sobre nosotros" class="rounded-2xl shadow-2xl">
+                    <picture>
+                        <source srcset="./img/webp/sobre-nosotros-320.webp" type="image/webp" media="(max-width: 320px)">
+                        <source srcset="./img/webp/sobre-nosotros-640.webp" type="image/webp" media="(max-width: 640px)">
+                        <source srcset="./img/webp/sobre-nosotros-1024.webp" type="image/webp" media="(max-width: 1024px)">
+                        <img src="./img/webp/sobre-nosotros-1920.webp" alt="Sobre nosotros" width="600" height="450" loading="lazy" class="rounded-2xl shadow-2xl">
+                    </picture>
                 </div>
                 <div class="md:w-1/2">
                     <h2 class="text-4xl md:text-5xl font-bold mb-6 text-gray-900">Sobre Nosotros</h2>

@@ -1,0 +1,27 @@
+# Archivos del sistema operativo
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Editor / IDE
+.vscode/
+.idea/
+*.sublime-project
+*.sublime-workspace
+
+# Claude Code
+.claude/
+
+# Archivos temporales
+*.tmp
+*.log
+*.bak
+
+# Reportes y documentación interna
+issues_overview_report.csv
+DESPLIEGUE_DROPLET.md
+PLAN_REPORTES_BALANCE.md
+
+# Node (si se usa en el futuro)
+node_modules/
+npm-debug.log*
