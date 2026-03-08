@@ -20,5 +20,8 @@ http://yogurinbustamante.com/* https://yogurinbustamante.com/:splat 301!
 # Redireccionar /index a /
 /index / 301!
 
+# Favicon
+/favicon.ico /img/logo.png 301!
+
 # Página 404 personalizada
 /* /404.html 404
