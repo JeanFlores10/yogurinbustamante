@@ -7,7 +7,7 @@
     <!-- Página Principal -->
     <url>
         <loc>https://yogurinbustamante.com/</loc>
-        <lastmod>2025-12-12</lastmod>
+        <lastmod>2026-03-27</lastmod>
         <changefreq>weekly</changefreq>
         <priority>1.0</priority>
     </url>
@@ -15,7 +15,7 @@
     <!-- Tienda Online -->
     <url>
         <loc>https://yogurinbustamante.com/tienda</loc>
-        <lastmod>2025-12-12</lastmod>
+        <lastmod>2026-03-27</lastmod>
         <changefreq>daily</changefreq>
         <priority>0.9</priority>
     </url>
@@ -23,15 +23,23 @@
     <!-- Servicios -->
     <url>
         <loc>https://yogurinbustamante.com/servicios</loc>
-        <lastmod>2025-12-12</lastmod>
+        <lastmod>2026-03-27</lastmod>
         <changefreq>weekly</changefreq>
+        <priority>0.85</priority>
+    </url>
+
+    <!-- Preguntas Frecuentes -->
+    <url>
+        <loc>https://yogurinbustamante.com/faq</loc>
+        <lastmod>2026-03-27</lastmod>
+        <changefreq>monthly</changefreq>
         <priority>0.85</priority>
     </url>
 
     <!-- Contacto -->
     <url>
         <loc>https://yogurinbustamante.com/contacto</loc>
-        <lastmod>2025-12-12</lastmod>
+        <lastmod>2026-03-27</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.8</priority>
     </url>
@@ -39,7 +47,50 @@
     <!-- Sobre Nosotros -->
     <url>
         <loc>https://yogurinbustamante.com/nosotros</loc>
-        <lastmod>2025-12-12</lastmod>
+        <lastmod>2026-03-27</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+    </url>
+
+    <!-- Páginas de Zona - Delivery Local -->
+    <url>
+        <loc>https://yogurinbustamante.com/yogurt-sayan</loc>
+        <lastmod>2026-03-27</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+
+    <url>
+        <loc>https://yogurinbustamante.com/yogurt-huacho</loc>
+        <lastmod>2026-03-27</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.75</priority>
+    </url>
+
+    <url>
+        <loc>https://yogurinbustamante.com/yogurt-andahuasi</loc>
+        <lastmod>2026-03-27</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.75</priority>
+    </url>
+
+    <url>
+        <loc>https://yogurinbustamante.com/yogurt-huaura</loc>
+        <lastmod>2026-03-27</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.75</priority>
+    </url>
+
+    <url>
+        <loc>https://yogurinbustamante.com/yogurt-humaya</loc>
+        <lastmod>2026-03-27</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+    </url>
+
+    <url>
+        <loc>https://yogurinbustamante.com/yogurt-churin</loc>
+        <lastmod>2026-03-27</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>
