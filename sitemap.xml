@@ -95,4 +95,19 @@
         <priority>0.7</priority>
     </url>
 
+    <!-- Artículos de Contenido SEO -->
+    <url>
+        <loc>https://yogurinbustamante.com/beneficios-yogurt-artesanal</loc>
+        <lastmod>2026-05-17</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+
+    <url>
+        <loc>https://yogurinbustamante.com/yogurt-sin-conservantes</loc>
+        <lastmod>2026-05-17</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+
 </urlset>
